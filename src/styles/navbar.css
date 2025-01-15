@@ -1,0 +1,50 @@
+div {
+    background-color: white;
+    padding: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    
+    
+    
+    
+}
+
+div ul {
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+div li {
+    padding: 0.5rem;
+}
+
+div a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+div a:hover {
+    color: #00ff9d;
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+@media (max-width: 768px) {
+    div ul {
+        gap: 1rem;
+    }
+    
+    div a {
+        font-size: 0.9rem;
+    }
+}
+

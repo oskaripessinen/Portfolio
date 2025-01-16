@@ -10,7 +10,7 @@
     display: grid;
     flex-direction: row;
     display: flex;
-    
+    gap: 5rem;
     justify-content: center;
     align-self: center;
 }

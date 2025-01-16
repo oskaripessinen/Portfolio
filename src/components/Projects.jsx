@@ -9,7 +9,7 @@ const Projects = () => {
     return (
         <div className="projects-container">
             <h2 style={{fontFamily: 'Poppins', fontSize: 18, fontWeight: 500, color: '#525150', marginTop: '2rem'}}>My Recent</h2>
-            <h1 style={{fontFamily: 'Poppins', fontSize: 32, fontWeight: 600,}}>Projects</h1>
+            <h1 style={{fontFamily: 'Poppins', fontSize: 42, fontWeight: 600,}}>Projects</h1>
             <ul className="projects-grid">
                 <li className="project-card">
                     <div className="project-gif-container">

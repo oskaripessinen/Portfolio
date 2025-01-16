@@ -11,13 +11,13 @@ function App() {
     <div className="App">
       
       <Navbar />
-      <section id="home">
+      <section id="about">
         <About />
       </section>
       <section id="projects">
         <Projects />
       </section>
-      <section id="contact">
+      <section id="contact" style={{alignItems: 'center', justifyContent: 'center', alignContent: 'center'}}>
         <Contact />
       </section>
       <Footer />

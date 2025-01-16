@@ -20,7 +20,7 @@ const About = () => {
         
             <div className="about" style={{ marginTop: '2rem' }}>
                 <h3 style={{fontWeight: 400,color: "#525150", fontFamily: 'Poppins', fontSize: 24, marginTop: '1rem'}}>Hello, i'm</h3>
-                <h1 style={{fontWeight: 600, fontFamily: 'Poppins', fontSize: 38, marginTop: '1rem'}}>Oskari Pessinen</h1>
+                <h1 style={{fontWeight: 600, fontFamily: 'Poppins', fontSize: 42, marginTop: '1rem'}}>Oskari Pessinen</h1>
                 <h2 style={{fontWeight: 600, fontFamily: 'Poppins', fontSize: 32, color: "#525150", marginTop: '1rem'}}>Full-stack developer</h2>
                 <div className='buttonContainer'>
                     <button className='cvB' onClick={handleDownload}>Download CV</button>
@@ -40,7 +40,7 @@ const About = () => {
                 <h1 className="about-title" style={{
                     fontWeight: 600,
                     fontFamily: 'Poppins',
-                    fontSize: 38,
+                    fontSize: 42,
                     
                 }}>About me</h1>
                 

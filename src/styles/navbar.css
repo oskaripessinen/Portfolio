@@ -39,12 +39,26 @@ html {
 }
 
 @media (max-width: 768px) {
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        margin: 0;
+    }
+
     div ul {
-        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
     }
     
     div a {
         font-size: 0.9rem;
     }
-}
 
+    div h2 {
+        margin-bottom: 0.5rem;
+    }
+}

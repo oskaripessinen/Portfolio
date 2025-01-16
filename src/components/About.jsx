@@ -72,18 +72,18 @@ const About = () => {
                             <h4 style={{
                                 fontFamily: 'Poppins',
                                 fontSize: '16px',
-                                color: '#333'
+                                color: '#000'
                             }}>University of Turku</h4>
                             <p style={{
                                 fontFamily: 'Poppins',
-                                fontSize: '14px',
-                                color: '#666',
+                                fontSize: '16px',
+                                color: '#525150',
                                 marginTop: '0.5rem'
                             }}>MSc Computer Engineering</p>
                             <p style={{
                                 fontFamily: 'Poppins',
-                                fontSize: '14px',
-                                color: '#888',
+                                fontSize: '16px',
+                                color: '#525150',
                                 marginTop: '0.25rem'
                             }}>2023 - Present</p>
                         </div>

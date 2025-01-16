@@ -11,6 +11,9 @@ const Footer = () => {
                     <Link to="about" offset={0} duration={400} style={{ fontFamily: 'Poppins', fontSize: 16, fontWeight: 500, color: "#525150" }}>
                         about
                     </Link>
+                    <Link to="experience" offset={0} duration={400} style={{ fontFamily: 'Poppins', fontSize: 16, fontWeight: 500, color: "#525150" }}>
+                        experience
+                    </Link>
                     <Link to="projects" offset={0} duration={400} style={{ fontFamily: 'Poppins', fontSize: 16, fontWeight: 500, color: "#525150" }}>
                         Projects
                     </Link>

@@ -2,11 +2,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 8rem;
+    margin-top: 4rem;
 }
 
 .experience-grid {
-    margin-top: 5rem;
+    margin-top: 4rem;
     display: flex;
     flex-wrap: nowrap;
     gap: 2rem;

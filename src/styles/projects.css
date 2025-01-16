@@ -1,11 +1,11 @@
 .projects-container {
     padding: 1rem;
     justify-content: center;
-    margin-top: 8rem;
+    margin-top: 2rem;
 }
 
 .projects-grid {
-    margin-top: 3rem;
+    margin-top: 4rem;
     list-style: none;
     padding: 0;
     display: flex;

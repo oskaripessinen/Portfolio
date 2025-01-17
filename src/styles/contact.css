@@ -27,9 +27,14 @@
     margin: 0;
     cursor: pointer;
     padding: 0;
-    width: 33px;
-    height: 33px;
+    width: 32px;
+    height: 32px;
     justify-content: center;
+    transition: all 0.2s ease; 
+}
+
+.emailBtn:hover {
+    transform: scale(1.1);
 }
 
 

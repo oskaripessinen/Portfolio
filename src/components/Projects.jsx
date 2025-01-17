@@ -1,41 +1,77 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import '../styles/projects.css';
-import projectGif1 from '../assets/project1.gif'; 
-import projectGif2 from '../assets/project2.gif';
-import projectPng3 from '../assets/project3.png';
+import projectVideo1 from '../assets/project-1.mp4'; 
+import projectVideo2 from '../assets/project2.mp4';
 
+import { ReactComponent as PlayIcon } from '../assets/play-solid.svg';
 
 const Projects = () => {
+
+    const video1Ref = useRef(null);
+    const video2Ref = useRef(null);
+
+    const handleMouseEnter = (videoRef) => {
+        videoRef.current.play();
+    };
+
+    const handleMouseLeave = (videoRef) => {
+        videoRef.current.pause();
+    };
+
+
     return (
         <div className="projects-container">
             <h2 style={{fontFamily: 'Poppins', fontSize: 18, fontWeight: 500, color: '#525150', marginTop: '2rem'}}>My Recent</h2>
             <h1 style={{fontFamily: 'Poppins', fontSize: 42, fontWeight: 600,}}>Projects</h1>
             <ul className="projects-grid">
                 <li className="project-card">
-                    <div className="project-gif-container">
-                        <img src={projectGif1} alt="Project 1 Demo" className="project-gif"/>
+                    <div className="project-video-container"
+                        onMouseEnter={() => handleMouseEnter(video1Ref)}
+                        onMouseLeave={() => handleMouseLeave(video1Ref)}>
+                        <PlayIcon className='play-icon'/>
+                        <video 
+                            ref={video1Ref}
+                            src={projectVideo1}
+                            className="project-video"
+                            muted
+                            loop
+                            playsInline
+                        />
                     </div>
-                    
-                    <h3 style={{fontFamily: 'Poppins', fontSize: 20, fontWeight: 600, marginTop: '2rem'}}>Stocks App</h3>
-                    <button className='githubBtn' onClick={() => window.open('https://github.com/oskaripessinen/stock-app')}>GitHub</button>
-                   
+                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 0, margin: 0, width: '100%', textAlign: 'left'}}>
+                        <h3 style={{fontFamily: 'Poppins', fontSize: 20, fontWeight: 600}}>Stocks App</h3>
+                        <p>
+                            A Mobile application for tracking stock prices and managing a stock portfolio.
+                            Built with React native and Yahoo finance Api.
+                        </p>
+                        <button className='githubBtn' onClick={() => window.open('https://github.com/oskaripessinen/stock-app')}>GitHub</button>
+                    </div>
                 </li>
                 <li className="project-card">
-                    <div className="project-gif-container" style={{}}>
-                        <img src={projectGif2} alt="Project 2 Demo" className="project-gif"/>
+                    <div className="project-video-container"
+                        onMouseEnter={() => handleMouseEnter(video2Ref)}
+                        onMouseLeave={() => handleMouseLeave(video2Ref)}>
+                        <PlayIcon className='play-icon'/>
+                        <video 
+                            ref={video2Ref}
+                            src={projectVideo2}
+                            className="project-video"
+                            muted
+                            loop
+                            playsInline
+                            
+                        />
                     </div>
-                    <h3 style={{fontFamily: 'Poppins', fontSize: 20, fontWeight: 600, marginTop: '2rem'}}>Price Finder</h3>
-                    <button className='githubBtn' onClick={() => window.open('https://github.com/oskaripessinen/price-finder')}>GitHub</button>
-                </li>
-                <li className="project-card">
-                    <div className="project-gif-container" style={{}}>
-                        <img src={projectPng3} alt="Project 3 Demo" className="project-gif"/>
-                        <h3 style={{marginTop: '2rem', fontFamily: 'Poppins', fontWeight: '400', color: "#525150", fontSize: 16, textAlign: 'left'}}>Youtube downloader and music player. Lets you download songs or playlists and play them. </h3>
+                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 0, margin: 0, width: '100%', textAlign: 'left'}}>
+                        <h3 style={{fontFamily: 'Poppins', fontSize: 20, fontWeight: 600}}>Price Finder</h3>
+                        <p>
+                            A Mobile application for finding prices of products from different online stores. 
+                            Built with React native, Flask and Ebay Api.
+                        </p>
+                        <button className='githubBtn' onClick={() => window.open('https://github.com/oskaripessinen/price-finder')}>GitHub</button>
                     </div>
-                    <h3 style={{fontFamily: 'Poppins', fontSize: 20, fontWeight: 600, marginTop: '2rem'}}>Music Dowloader / Player</h3>
-                    <button className='githubBtn' onClick={() => window.open('https://github.com/oskaripessinen/price-finder')}>GitHub</button>
-                        
                 </li>
+                
             </ul>
         </div>
     );

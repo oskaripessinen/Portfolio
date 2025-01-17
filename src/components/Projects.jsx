@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import '../styles/projects.css';
-import projectVideo1 from '../assets/project-1.mp4'; 
+import projectVideo1 from '../assets/project1.mp4'; 
 import projectVideo2 from '../assets/project2.mp4';
 
 import { ReactComponent as PlayIcon } from '../assets/play-solid.svg';
@@ -42,7 +42,7 @@ const Projects = () => {
                         <h3 style={{fontFamily: 'Poppins', fontSize: 20, fontWeight: 600}}>Stocks App</h3>
                         <p>
                             A Mobile application for tracking stock prices and managing a stock portfolio.
-                            Built with React native and Yahoo finance Api.
+                            Built with React native and Yahoo finance Api for real time stock data.
                         </p>
                         <button className='githubBtn' onClick={() => window.open('https://github.com/oskaripessinen/stock-app')}>GitHub</button>
                     </div>

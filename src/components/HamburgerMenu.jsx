@@ -18,13 +18,14 @@ const HamburgerMenu = () => {
                     <span></span>
                     <span></span>
                 </button>
+                <div className={`menu-items ${open ? 'open' : ''}`}>
+                <Link to="about" offset={600} onClick={() => setOpen(false)}>About</Link>
+                <Link to="experience" onClick={() => setOpen(false)}>Experience</Link>
+                <Link to="projects" onClick={() => setOpen(false)}>Projects</Link>
+                <Link to="contact"  onClick={() => setOpen(false)}>Contact</Link>
             </div>
-            <div className={`menu-items ${open ? 'open' : ''}`}>
-                <Link to="about" smooth={true} onClick={() => setOpen(false)}>About</Link>
-                <Link to="experience" smooth={true} onClick={() => setOpen(false)}>Experience</Link>
-                <Link to="projects" smooth={true} onClick={() => setOpen(false)}>Projects</Link>
-                <Link to="contact" smooth={true} onClick={() => setOpen(false)}>Contact</Link>
             </div>
+            
         </div>
     );
 }

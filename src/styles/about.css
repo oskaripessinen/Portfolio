@@ -34,6 +34,7 @@
     width: 48px;
     margin: 5px;
     transition: all 0.2s ease;
+    background-color: white;
 }
 
 .githubB img {
@@ -130,5 +131,8 @@
     
     .about-text {
         padding: 0 1rem;
+    }
+    .education-box{
+        margin-top: 2rem;
     }
 }

@@ -14,6 +14,9 @@ html {
   background-color: #f2f0ef;
   margin: 0;
   padding: 0;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 
 .App {  
@@ -62,10 +65,12 @@ nav a {
 
 @media (max-width: 768px) {
   .App {
-    max-width: 100%;
+    max-width: 90%;
     padding: 0;
     margin: 0;
     align-items: center;
+    justify-content: center;
+    align-content: center;
   }
   
   section {

@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-scroll';
+
 import '../styles/navbar.css';
 
 const Navbar = () => {
+    
   return (
     <div className="navbar">
         <div style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem' }}>

@@ -114,6 +114,11 @@
         flex-direction: column;
         gap: 2rem;
         align-content: center;
+        
+    }
+
+    .githubBtn {
+        margin-top: 1rem;
     }
 
     .project-card {
@@ -123,17 +128,25 @@
         height: auto;
         padding: 1rem;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
     }
 
     .project-video-container {
         width: 90%;
         height: auto;
         max-height: 300px;
+        border-radius: 20px;
+        
+        padding: 10px;
+        background: white;
     }
     .project-video {
-        width: 90%;
-        height: auto;
+        width: auto;
+        height: 100%;
         max-height: 300px;
+        border-radius: 10px;
         
     }
 }

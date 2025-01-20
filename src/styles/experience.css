@@ -82,15 +82,10 @@
         padding: 1rem;
     }
 
-    .experience-gif-container {
-        width: 90%;
-        height: auto;
-        max-height: 300px;
-    }
-    .experience-gif {
-        width: 90%;
-        height: auto;
-        max-height: 300px;
-        
+    .skills-list {
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        margin: 0;
     }
 }

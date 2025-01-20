@@ -6,7 +6,7 @@ import email from '../assets/mail.png';
 const Contact = () => {
     return (
         <div className='contact-wrapper'>
-            <h2 style={{fontFamily: 'Poppins', fontSize: 42, transform: 'translateY(-2rem)'}}>Contact Me</h2>
+            <h2 style={{fontFamily: 'Poppins', fontSize: 42}}>Contact Me</h2>
             <div className="contact-container">
                 <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', margin: 0, gap: '0.5rem'}}>
                     <button className='emailBtn' onClick={() => window.open('mailto:oskari.pessinen@gmail.com')}>

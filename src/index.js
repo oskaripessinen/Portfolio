@@ -5,6 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+window.addEventListener('error', (event) => {
+ 
+  if (event.message.includes('previewOrigin')) {
+    event.preventDefault();
+  }
+});
+
 root.render(
   <React.StrictMode>
     <App />

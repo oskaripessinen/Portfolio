@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    margin-top: 12rem;
 }
 
 
@@ -18,7 +19,7 @@
     width: 25rem;
     border-radius: 30px;
     align-items: center;
-    gap: 1rem;
+    margin-top: 2rem;
 }
 .emailBtn {
     background-color: #fff;

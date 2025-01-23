@@ -60,7 +60,7 @@ const About = () => {
                         
                     </div>
                     <div className="education-box" style={{
-                        backgroundColor: '#f5f5f5',
+                        backgroundColor: 'white',
                         maxWidth: '600px'
                     }}>
                         <h3 className="education-heading">

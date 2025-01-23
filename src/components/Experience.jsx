@@ -11,7 +11,7 @@ const Experience = () => {
             <h1 style={{fontFamily: 'Poppins', fontSize: 42, fontWeight: 600}}>Experience</h1>
             <div className="experience-grid">
                 <div className="experience-card">
-                    <h3 style={{fontFamily: 'Poppins', fontSize: 24, fontWeight: 600, marginBottom: '2rem'}}>Frontend</h3>
+                    <h3>Frontend</h3>
                     <ul className="skills-list">
                         <li><Circlecheck className="skill-icon" />React</li>
                         <li><Circlecheck className="skill-icon" />React Native</li>
@@ -22,7 +22,7 @@ const Experience = () => {
                     </ul>
                 </div>
                 <div className="experience-card">
-                    <h3 style={{fontFamily: 'Poppins', fontSize: 24, fontWeight: 600, marginBottom: '2rem'}}>Backend</h3>
+                    <h3>Backend</h3>
                     <ul className="skills-list">
                         <li><Circlecheck className="skill-icon" />Python</li>
                         <li><Circlecheck className="skill-icon" />Java</li>

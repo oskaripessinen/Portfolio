@@ -16,21 +16,22 @@
     flex-direction: column;
     padding: 1.75rem;
     border: 1px solid #000;
-    width: 25rem;
+    width: 30rem;
     border-radius: 30px;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 .emailBtn {
-    background-color: #fff;
+    background-color: white;
     color: #000000;
     border: none;
     margin: 0;
     cursor: pointer;
     padding: 0;
-    width: 32px;
-    height: 32px;
+    width: 35px;
+    height: 35px;
     justify-content: center;
+    align-content: center;
     transition: all 0.2s ease; 
 }
 
@@ -40,3 +41,12 @@
 
 
 
+@media (max-width: 768px) {
+    .contact-container {
+        width: 25rem;
+    }
+    .emailBtn {
+        width: 25px;
+        height: 25px;
+    }
+}

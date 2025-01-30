@@ -6,7 +6,16 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Experience from './components/Experience';
 import HamburgerMenu from './components/HamburgerMenu';
+import FadeInWrapper from './components/FadeInWrapper';
 import './App.css';
+
+const FadedNavbar = FadeInWrapper(Navbar);
+const FadedHamburgerMenu = FadeInWrapper(HamburgerMenu);
+const FadedAbout = FadeInWrapper(About);
+const FadedExperience = FadeInWrapper(Experience);
+const FadedProjects = FadeInWrapper(Projects);
+const FadedContact = FadeInWrapper(Contact);
+const FadedFooter = FadeInWrapper(Footer);
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -22,20 +31,20 @@ function App() {
 
   return (
     <div className="App">
-      {isMobile ? <HamburgerMenu /> : <Navbar />}
+      {isMobile ? <FadedHamburgerMenu /> : <FadedNavbar />}
       <section id="about">
-        <About />
+        <FadedAbout />
       </section>
       <section id="experience">
-        <Experience />
+        <FadedExperience />
       </section>
       <section id="projects">
-        <Projects />
+        <FadedProjects />
       </section>
       <section id="contact">
-        <Contact />
+        <FadedContact />
       </section>
-      <Footer />
+      <FadedFooter />
     </div>
   );
 }

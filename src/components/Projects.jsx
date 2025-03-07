@@ -38,12 +38,14 @@ const Projects = () => {
                             playsInline
                         />
                     </div>
-                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 0, margin: 0, width: '100%', textAlign: 'left'}}>
-                        <h3 style={{fontFamily: 'Poppins', fontSize: 20, fontWeight: 600}}>Stocks App</h3>
-                        <p>
-                            A Mobile application for tracking stock prices and managing a stock portfolio.
-                            Built with React native and Yahoo finance Api for real time stock data.
-                        </p>
+                    <div className="project-content">
+                        <div style={{margin: 0, padding: 0, width: "200px"}}>
+                            <h3 style={{fontFamily: 'Poppins', fontSize: 20, fontWeight: 600}}>Stocks App</h3>
+                            <p>
+                                A Mobile application for tracking stock prices and managing a stock portfolio.
+                                Built with React native and Yahoo finance Api for real time stock data.
+                            </p>
+                        </div>
                         <button className='githubBtn' onClick={() => window.open('https://github.com/oskaripessinen/stock-app')}>GitHub</button>
                     </div>
                 </li>
@@ -59,19 +61,19 @@ const Projects = () => {
                             muted
                             loop
                             playsInline
-                            
                         />
                     </div>
-                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 0, margin: 0, width: '100%', textAlign: 'left'}}>
-                        <h3 style={{fontFamily: 'Poppins', fontSize: 20, fontWeight: 600}}>Price Finder</h3>
-                        <p>
-                            A Mobile application for finding prices of products from different online stores. 
-                            Built with React native, Flask and Ebay Api.
-                        </p>
+                    <div className="project-content">
+                        <div style={{margin: 0, padding: 0, width: "200px"}}>
+                            <h3 style={{fontFamily: 'Poppins', fontSize: 20, fontWeight: 600, width: "200px"}}>Price Finder</h3>
+                            <p>
+                                A Mobile application for finding prices of products from different online stores. 
+                                Built with React native, Flask and Ebay Api.
+                            </p>
+                        </div>
                         <button className='githubBtn' onClick={() => window.open('https://github.com/oskaripessinen/price-finder')}>GitHub</button>
                     </div>
                 </li>
-                
             </ul>
         </div>
     );

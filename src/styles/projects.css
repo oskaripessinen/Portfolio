@@ -13,26 +13,59 @@
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
+    max-width: 1600px; /* Set maximum width to contain cards */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .project-card {
     background: white;
     padding: 2.2rem;
-    width: 600px;
-    min-height: 400px;
     border-radius: 30px;
     border: 1px solid #000;
-    
     display: flex;
     flex-direction: row;
-    
     justify-content: flex-start;
     gap: 3rem;
+    width: 650px; /* Slightly smaller to fit side by side */
+    
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Add a new class for the content section */
+.project-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This pushes content apart */
+    height: 500px; /* Match height of video container */
+    text-align: left; /* Ensure text is left-aligned */
+    margin: 0;
+    padding: 0;
+    flex: 1; /* Take available space */
+    width: calc(100% - 300px); /* Account for video width and gap */
+    overflow-wrap: break-word; /* Allow word breaking for long text */
+    word-wrap: break-word;
+}
+
+/* Ensure paragraphs are left-aligned and don't overflow */
+.project-content p {
+    text-align: left;
+    max-width: 100%; /* Don't exceed container width */
+    word-wrap: break-word; /* Break words that are too long */
+    overflow-wrap: break-word;
+}
+
+.project-content h3 {
+  text-align: center;
+  width: 100%; /* Ensure full width */
+  font-family: 'Poppins';
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .project-video-container {
     position: relative;
-    
     height: 500px;
     padding: 0;
     margin: 0;
@@ -90,7 +123,8 @@
     background-color: transparent;
     color: #000;
     padding: 12px 0px;
-    width: 12rem;
+    width: 100%; /* Make button width responsive */
+    max-width: 12rem; /* Set maximum width */
     font-family: 'Poppins';
     font-weight: 600;
     border-radius: 30px;
@@ -99,9 +133,8 @@
     margin: 5px;
     border: 2px solid #000;
     transition: all 0.3s ease;
-    margin-top: 16rem;
-    
-    
+    align-self: center; /* Center within content area */
+    box-sizing: border-box; /* Include padding in width */
 }
 
 .githubBtn:hover {
@@ -118,12 +151,13 @@
     }
 
     .githubBtn {
-        margin-top: 1rem;
+        margin-top: 1rem; /* Keep this for mobile */
+        align-self: center; /* Center on mobile */
     }
 
     .project-card {
-        width: 100%;
-        max-width: 350px;
+        
+        width: 400px;
         min-height: 250px;
         height: auto;
         padding: 1rem;
@@ -133,8 +167,13 @@
         
     }
 
+    .project-content {
+        height: auto;
+        width: 100%;
+    }
+
     .project-video-container {
-        width: 90%;
+        width: 100%;
         height: auto;
         max-height: 300px;
         border-radius: 20px;

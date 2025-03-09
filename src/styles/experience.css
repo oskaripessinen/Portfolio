@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 4rem;
+    align-self: center;
 }
 
 .experience-grid {
@@ -13,13 +13,12 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    
     flex-direction: row;
 }
 
 .experience-card {
     background: white;
-    padding: 0;
+    padding: 2rem;
     width: 700px;
     height: 350px;
     border-radius: 30px;
@@ -46,14 +45,16 @@
     gap: 1.5rem;
     list-style: none;
     padding: 0;
-    width: 100%;
+    width: 80%; /* Reduced width to center in card */
     margin-top: 3rem;
-    padding-left: 5rem;
+    /* Removed padding-left: 5rem; to center content */
+    text-align: center;
 }
 
 .skills-list li {
     display: flex;
     align-items: center;
+    justify-content: center; /* Center list items */
     gap: 1rem;
     font-weight: 500;
     font-family: 'Poppins';

@@ -1,9 +1,27 @@
-.buttoContainer {
+.buttonContainer {
     display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
     justify-content: center;
-    margin-top: 20px;
+    align-items: center;
 }
 
+.aboutMe {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Add a container for social media buttons */
+.socialButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
 
 .cvB, .conB {
     background-color: transparent;
@@ -57,7 +75,7 @@
     font-weight: 600;
     font-family: 'Poppins';
     font-size: 38px;
-    margin-top: 1rem;
+    
     text-align: center;
 }
 
@@ -77,33 +95,38 @@
     padding: 0;
     margin-right: 0;
     margin-top: 3rem;
-    gap: 1rem;
+    gap: 3rem;
     background-color: white;
 }
 
 .education-box {
-    flex: 0 1 300px;
+    display: flex;
+    flex-direction: column;
     background-color: white;
     border: 1px solid #000;
     padding: 2rem;
     border-radius: 2rem;
     margin: 0;
-    justify-content: center;
+    justify-content: center; /* Centers content vertically */
     text-align: center;
-
+    align-items: center;
+    height: 200px; /* Add a fixed height to enable vertical centering */
 }
 
 .education-heading {
     font-family: 'Poppins';
     font-size: 18px;
     text-align: center;
-    margin-top: 1rem;
+    margin-bottom: 1rem; /* Add some space between heading and content */
 }
 
 .education-content {
     margin: 0;
     padding: 0;
-    padding-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-text {
@@ -117,6 +140,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
+    text-align: justify;
 }
 
 @media (max-width: 768px) {
@@ -132,8 +156,24 @@
     
     .about-text {
         padding: 0 1rem;
+        margin-top: 1rem;
     }
     .education-box{
         margin-top: 2rem;
+    }
+    .aboutMe {
+        flex-direction: column;
+    }
+    
+    .buttonContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .socialButtons {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
 }

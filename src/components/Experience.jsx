@@ -7,7 +7,7 @@ import { ReactComponent as Circlecheck } from '../assets/circle-check-regular.sv
 const Experience = () => {
     return (
         <div className="experience-container">
-            <h2 style={{fontFamily: 'Poppins', fontSize: 18, fontWeight: 500, color: '#525150', marginTop: '5rem'}}>My</h2>
+            <h2 style={{fontFamily: 'Poppins', fontSize: 18, fontWeight: 500, color: '#525150'}}>My</h2>
             <h1 style={{fontFamily: 'Poppins', fontSize: 42, fontWeight: 600}}>Experience</h1>
             <div className="experience-grid">
                 <div className="experience-card">

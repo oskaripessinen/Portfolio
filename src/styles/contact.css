@@ -1,13 +1,11 @@
-
-
-
 .contact-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    margin-top: 12rem;
+    min-height: 80vh; /* Use viewport height to create vertical space */
+    width: 100%;
+    margin: 0 auto;
 }
 
 
@@ -19,7 +17,8 @@
     width: 30rem;
     border-radius: 30px;
     align-items: center;
-    margin-top: 4rem;
+    margin-top: 2rem;
+    
 }
 .emailBtn {
     background-color: white;

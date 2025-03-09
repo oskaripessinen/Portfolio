@@ -11,7 +11,7 @@ const Navbar = () => {
             <h2 style={{fontWeight: 300,color: "#3b3a39", fontFamily: 'Poppins', fontSize: 28}}>Oskari Pessinen</h2>
             <ul>
                 <li>
-                    <Link to="about" offset={0} duration={400} className='navbarLink'>
+                    <Link to="about" offset={300} duration={400} className='navbarLink'>
                         About
                     </Link>
                 </li>

@@ -7,7 +7,7 @@ const HamburgerMenu = () => {
 
     return (
         <div className="hamburger-nav">
-            <h2>Oskari Pessinen</h2>
+            <h2 style={{margin: 0}}>Oskari Pessinen</h2>
             <div className="hamburger-container">
                
                 <button 

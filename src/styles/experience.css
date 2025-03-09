@@ -3,6 +3,25 @@
     flex-direction: column;
     align-items: center;
     align-self: center;
+    text-align: center;
+}
+
+/* Add styling for the main title */
+.experience-container h1 {
+    font-family: 'Poppins';
+    font-size: 42px;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+}
+
+.experience-container h2 {
+    font-family: 'Poppins';
+    font-size: 18px;
+    font-weight: 500;
+    color: #525150;
+    text-align: center;
+    width: 100%;
 }
 
 .experience-grid {
@@ -11,7 +30,7 @@
     flex-wrap: nowrap;
     gap: 2rem;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     width: 100%;
     flex-direction: row;
 }
@@ -26,17 +45,21 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Change from center to flex-start */
     justify-content: center;
-    align-content: center;
+    align-content: flex-start; /* Change from center to flex-start */
 }
 
 .experience-card h3 {
     font-family: 'Poppins';
     font-size: 32px;
     font-weight: 600;
-    margin-top: -2rem;
+    margin-top: -1rem;
     color: #525150;
+    align-self: center; /* Center the title */
+    width: 100%; /* Take full width */
+    text-align: center; /* Center the text */
+    margin-left: 0; /* Remove left margin */
 }
 
 .skills-list {
@@ -44,17 +67,15 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     list-style: none;
-    padding: 0;
-    width: 80%; /* Reduced width to center in card */
-    margin-top: 3rem;
-    /* Removed padding-left: 5rem; to center content */
-    text-align: center;
+    margin: 0.5rem;
+    margin-top: 2rem;
+    text-align: left; /* Change from center to left */
 }
 
 .skills-list li {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center list items */
+    justify-content: flex-start; /* Change from center to flex-start */
     gap: 1rem;
     font-weight: 500;
     font-family: 'Poppins';

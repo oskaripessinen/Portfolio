@@ -156,7 +156,7 @@
     }
 
     .project-card {
-        
+        border: none;
         width: 400px;
         min-height: 250px;
         height: auto;
@@ -175,16 +175,16 @@
     .project-video-container {
         width: 100%;
         height: auto;
-        max-height: 300px;
+        max-height: 600px;
         border-radius: 20px;
-        
+    
         padding: 10px;
         background: white;
     }
     .project-video {
         width: auto;
         height: 100%;
-        max-height: 300px;
+        max-height: 600px;
         border-radius: 10px;
         
     }

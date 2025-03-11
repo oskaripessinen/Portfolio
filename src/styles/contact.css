@@ -40,12 +40,11 @@
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
     .contact-container {
         width: 25rem;
     }
     .emailBtn {
-        width: 25px;
-        height: 25px;
+        
     }
 }

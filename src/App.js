@@ -18,11 +18,11 @@ const FadedContact = FadeInWrapper(Contact);
 const FadedFooter = FadeInWrapper(Footer);
 
 function App() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 820);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 820);
     };
 
     window.addEventListener('resize', handleResize);

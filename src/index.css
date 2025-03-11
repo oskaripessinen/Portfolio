@@ -2,12 +2,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  align-content: center;
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 70px;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .root {
@@ -61,7 +67,7 @@ nav a {
   width: device-width;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
   .App {
     max-width: 100%;
     padding: 0;

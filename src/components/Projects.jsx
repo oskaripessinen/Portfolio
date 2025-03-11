@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import '../styles/projects.css';
 import projectVideo1 from '../assets/project1.mp4'; 
 import projectVideo2 from '../assets/project2.mp4';
@@ -6,18 +6,38 @@ import projectVideo2 from '../assets/project2.mp4';
 import { ReactComponent as PlayIcon } from '../assets/play-solid.svg';
 
 const Projects = () => {
-
     const video1Ref = useRef(null);
     const video2Ref = useRef(null);
+    const [isIOS, setIsIOS] = useState(false);
+    
+    useEffect(() => {
+        
+        const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                          (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        setIsIOS(isIOSDevice);
+    }, []);
 
     const handleMouseEnter = (videoRef) => {
-        videoRef.current.play();
+        if (!isIOS && videoRef.current) {
+            videoRef.current.play().catch(err => console.log("Autoplay prevented:", err));
+        }
     };
 
     const handleMouseLeave = (videoRef) => {
-        videoRef.current.pause();
+        if (!isIOS && videoRef.current) {
+            videoRef.current.pause();
+        }
     };
-
+    
+    const handleVideoClick = (videoRef) => {
+        if (videoRef.current) {
+            if (videoRef.current.paused) {
+                videoRef.current.play().catch(err => console.log("Play failed:", err));
+            } else {
+                videoRef.current.pause();
+            }
+        }
+    };
 
     return (
         <div className="projects-container">
@@ -27,8 +47,9 @@ const Projects = () => {
                 <li className="project-card">
                     <div className="project-video-container"
                         onMouseEnter={() => handleMouseEnter(video1Ref)}
-                        onMouseLeave={() => handleMouseLeave(video1Ref)}>
-                        <PlayIcon className='play-icon'/>
+                        onMouseLeave={() => handleMouseLeave(video1Ref)}
+                        onClick={() => handleVideoClick(video1Ref)}>
+                        <PlayIcon className={`play-icon ${isIOS ? 'visible' : ''}`}/>
                         <video 
                             ref={video1Ref}
                             src={projectVideo1}
@@ -36,6 +57,7 @@ const Projects = () => {
                             muted
                             loop
                             playsInline={true}
+                            poster="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
                         />
                     </div>
                     <div className="project-content">
@@ -52,8 +74,9 @@ const Projects = () => {
                 <li className="project-card">
                     <div className="project-video-container"
                         onMouseEnter={() => handleMouseEnter(video2Ref)}
-                        onMouseLeave={() => handleMouseLeave(video2Ref)}>
-                        <PlayIcon className='play-icon'/>
+                        onMouseLeave={() => handleMouseLeave(video2Ref)}
+                        onClick={() => handleVideoClick(video2Ref)}>
+                        <PlayIcon className={`play-icon ${isIOS ? 'visible' : ''}`}/>
                         <video 
                             ref={video2Ref}
                             src={projectVideo2}
@@ -61,6 +84,7 @@ const Projects = () => {
                             muted
                             loop
                             playsInline={true}
+                            poster="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
                         />
                     </div>
                     <div className="project-content">

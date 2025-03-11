@@ -58,7 +58,7 @@
 
 .project-content h3 {
   text-align: center;
-  width: 100%; /* Ensure full width */
+  width: 100%; 
   font-family: 'Poppins';
   font-size: 20px;
   font-weight: 600;
@@ -68,13 +68,17 @@
 .project-video-container {
     position: relative;
     height: 500px;
+    width: 250px; 
+    max-width: 250px;
     padding: 0;
     margin: 0;
-    background: white;
-    transition: transform 0.3s ease;
+    background: black;
+    transition: all 0.3s ease; 
     display: flex;
-    
     align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .play-icon {
@@ -91,18 +95,39 @@
     transition: opacity 0.3s ease;
 }
 
+
+.play-icon.visible {
+    opacity: 1;
+    width: 40px;
+    height: 40px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    padding: 10px;
+}
+
 .project-video {
     position: relative;
-    
-    height: 500px;
+    height: 500px; 
+    width: 100%; 
+    object-fit: cover;
     cursor: pointer;
     filter: brightness(0.1);
     transition: all 0.3s ease;
-    
     border-radius: 15px;
+}
+
+
+.project-video-container:hover {
     
-    
-    
+    transform: none;
+    width: 250px; 
+    height: 500px; 
+}
+
+.project-video-container:hover .project-video {
+    filter: brightness(1); 
+    width: 100%; 
+    height: 500px;
 }
 
 .project-video-container:hover .play-icon {
@@ -143,7 +168,7 @@
     color: white;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
     .projects-grid {
         flex-direction: column;
         gap: 2rem;
@@ -173,23 +198,39 @@
     }
 
     .project-video-container {
-        width: 100%;
-        height: auto;
-        max-height: 600px;
-        border-radius: 20px;
-    
-        padding: 10px;
+        position: relative;
+        height: 500px;
+        padding: 0;
+        margin: 0;
         background: white;
-    }
+        transition: transform 0.3s ease;
+        display: flex;
+        
+        align-items: center;
+        }
     .project-video {
-        width: auto;
-        height: 100%;
-        max-height: 600px;
-        border-radius: 10px;
+        position: relative;
+    
+        height: 500px;
+        cursor: pointer;
+        filter: brightness(0.1);
+        transition: all 0.3s ease;
+        
+        border-radius: 15px;
         
     }
 }
 
+
+@supports (-webkit-touch-callout: none) {
+    .project-video {
+        background-color: black;
+    }
+    
+    .project-video-container {
+        cursor: pointer;
+    }
+}
 
 p {
 

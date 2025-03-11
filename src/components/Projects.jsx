@@ -35,12 +35,12 @@ const Projects = () => {
                             className="project-video"
                             muted
                             loop
-                            playsInline
+                            playsInline={true}
                         />
                     </div>
                     <div className="project-content">
                         <div style={{margin: 0, padding: 0, width: "200px"}}>
-                            <h3 style={{fontFamily: 'Poppins', fontSize: 20, fontWeight: 600}}>Stocks App</h3>
+                            <h3 style={{fontFamily: 'Poppins', fontSize: 18, fontWeight: 600}}>Stocks App</h3>
                             <p>
                                 A Mobile application for tracking stock prices and managing a stock portfolio.
                                 Built with React native and Yahoo finance Api for real time stock data.
@@ -60,12 +60,12 @@ const Projects = () => {
                             className="project-video"
                             muted
                             loop
-                            playsInline
+                            playsInline={true}
                         />
                     </div>
                     <div className="project-content">
                         <div style={{margin: 0, padding: 0, width: "200px"}}>
-                            <h3 style={{fontFamily: 'Poppins', fontSize: 20, fontWeight: 600, width: "200px"}}>Price Finder</h3>
+                            <h3 style={{fontFamily: 'Poppins', fontSize: 18, fontWeight: 600, width: "200px"}}>Price Finder</h3>
                             <p>
                                 A Mobile application for finding prices of products from different online stores. 
                                 Built with React native, Flask and Ebay Api.

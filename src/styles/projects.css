@@ -1,7 +1,8 @@
 .projects-container {
-    padding: 1rem;
+    padding: 0;
     justify-content: center;
     margin-top: 2rem;
+    align-items: center;
 }
 
 .projects-grid {
@@ -13,7 +14,7 @@
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
-    max-width: 1600px; /* Set maximum width to contain cards */
+
     margin-left: auto;
     margin-right: auto;
 }
@@ -27,31 +28,31 @@
     flex-direction: row;
     justify-content: flex-start;
     gap: 3rem;
-    width: 650px; /* Slightly smaller to fit side by side */
+    width: 600px;
     
-    box-sizing: border-box; /* Include padding in width calculation */
+    box-sizing: border-box; 
 }
 
-/* Add a new class for the content section */
+
 .project-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* This pushes content apart */
-    height: 500px; /* Match height of video container */
-    text-align: left; /* Ensure text is left-aligned */
+    justify-content: space-between; 
+    height: 500px; 
+    text-align: left;
     margin: 0;
     padding: 0;
-    flex: 1; /* Take available space */
-    width: calc(100% - 300px); /* Account for video width and gap */
-    overflow-wrap: break-word; /* Allow word breaking for long text */
+    flex: 1; 
+    width: calc(100% - 300px); 
+    overflow-wrap: break-word; 
     word-wrap: break-word;
 }
 
-/* Ensure paragraphs are left-aligned and don't overflow */
+
 .project-content p {
     text-align: left;
-    max-width: 100%; /* Don't exceed container width */
-    word-wrap: break-word; /* Break words that are too long */
+    max-width: 100%; 
+    word-wrap: break-word; 
     overflow-wrap: break-word;
 }
 
@@ -123,8 +124,8 @@
     background-color: transparent;
     color: #000;
     padding: 12px 0px;
-    width: 100%; /* Make button width responsive */
-    max-width: 12rem; /* Set maximum width */
+    width: 100%; 
+    max-width: 12rem; 
     font-family: 'Poppins';
     font-weight: 600;
     border-radius: 30px;
@@ -133,8 +134,8 @@
     margin: 5px;
     border: 2px solid #000;
     transition: all 0.3s ease;
-    align-self: center; /* Center within content area */
-    box-sizing: border-box; /* Include padding in width */
+    align-self: center; 
+    box-sizing: border-box; 
 }
 
 .githubBtn:hover {
@@ -151,12 +152,11 @@
     }
 
     .githubBtn {
-        margin-top: 1rem; /* Keep this for mobile */
-        align-self: center; /* Center on mobile */
+        margin-top: 1rem; 
+        align-self: center; 
     }
 
     .project-card {
-        border: none;
         width: 400px;
         min-height: 250px;
         height: auto;

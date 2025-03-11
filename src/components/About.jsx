@@ -18,7 +18,7 @@ const About = () => {
     };
 
     return (
-        <div>
+        <div style={{margin: 0, padding: 0}}>
             <div className="about" style={{ marginTop: '0rem' }}>
                 <div className='aboutMe'>
                     <img 

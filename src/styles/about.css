@@ -13,7 +13,7 @@
     justify-content: center;
 }
 
-/* Add a container for social media buttons */
+
 .socialButtons {
     display: flex;
     flex-direction: row;
@@ -65,9 +65,10 @@
 }
 
 .about-container {
-
+    margin: 0;
     margin-top: 5rem;
     padding: 0;
+    
     
 }
 
@@ -151,9 +152,7 @@
         padding: 0;
     }
     
-    .about-container {
-        padding: 0 1rem;
-    }
+    
     
     .about-text {
         padding: 0 1rem;

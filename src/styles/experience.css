@@ -80,7 +80,8 @@
 .skills-list li {
     display: flex;
     align-items: center;
-    justify-content: flex-start; 
+    justify-content: flex-start;
+    height: 1.5rem;
     gap: 1rem;
     font-weight: 500;
     font-family: 'Poppins';
@@ -88,6 +89,7 @@
     color: #000;
     margin: 0;
     padding: 0;
+    overflow: visible;
 }
 
 .skill-icon {

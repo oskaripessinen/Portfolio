@@ -27,7 +27,8 @@ body {
 
 .App {  
   text-align: center;
-  margin: auto;
+  margin: 0;
+  padding: 0;
   align-items: center;
   align-content: center;
   width: 100%;

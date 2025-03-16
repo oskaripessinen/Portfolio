@@ -68,7 +68,7 @@ const About = () => {
                 <div className="content-wrapper">
                     <div className="about-text">
                             <p style={{margin: 0}}>I am a passionate full-stack developer with a strong foundation in both front-end and back-end development. 
-                                Currently pursuing my Master's degree in Computer Engineering, I combine academic knowledge with practical 
+                                Currently pursuing my bachelor's degree in Information and Communication Technology, I combine academic knowledge with practical 
                                 experience in building web and mobile applications.
                             </p>
 

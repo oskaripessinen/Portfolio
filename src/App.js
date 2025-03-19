@@ -39,7 +39,7 @@ function App() {
         <FadedExperience />
       </section>
       <section id="projects">
-        <FadedProjects />
+        <FadedProjects isMobile={isMobile}/>
       </section>
       <section id="contact">
         <FadedContact />

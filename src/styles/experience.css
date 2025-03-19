@@ -41,7 +41,7 @@
 .experience-card {
     background: white;
     padding: 0rem;
-    height: 325px;
+    height: 300px;
     border-radius: 30px;
     border: 1px solid #000;
     margin: 0;
@@ -51,12 +51,12 @@
     justify-content: center;
     align-content: flex-start; 
     flex: 1 0 0%;
-    max-width: 500px;
+    max-width: 450px;
 }
 
 .experience-card h3 {
     font-family: 'Poppins';
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 600;
     margin-top: -2rem;
     color: #525150;
@@ -85,7 +85,7 @@
     gap: 1rem;
     font-weight: 500;
     font-family: 'Poppins';
-    font-size: 20px;
+    font-size: 18px;
     color: #000;
     margin: 0;
     padding: 0;

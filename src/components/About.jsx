@@ -57,12 +57,7 @@ const About = () => {
                 
             </div>
             <div className="about-container">
-                <h1 className="about-title" style={{
-                    fontWeight: 600,
-                    fontFamily: 'Poppins',
-                    fontSize: 42,
-                    
-                }}>About me</h1>
+                <h1 className="about-title">About me</h1>
                 
                 
                 <div className="content-wrapper">
@@ -97,7 +92,7 @@ const About = () => {
                                 fontSize: '16px',
                                 color: '#525150',
                                 marginTop: '0.5rem'
-                            }}>MSc Computer Engineering</p>
+                            }}>B.Sc. ICT</p>
                             <p style={{
                                 fontFamily: 'Poppins',
                                 fontSize: '16px',

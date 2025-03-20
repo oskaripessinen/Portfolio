@@ -18,6 +18,7 @@
     border-radius: 30px;
     align-items: center;
     margin-top: 2rem;
+    gap: 1rem;
     
 }
 .emailBtn {
@@ -42,7 +43,7 @@
 
 @media (max-width: 820px) {
     .contact-container {
-        width: 25rem;
+        width: 23rem;
     }
     
 }

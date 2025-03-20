@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, act } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import '../styles/projects.css';
 import projectVideo1 from '../assets/project1.mp4'; 
 import projectVideo2 from '../assets/project2.mp4';
@@ -19,33 +19,36 @@ const Projects = ({ isMobile }) => {
         setIsIOS(isIOSDevice);
     }, []);
 
-    // Intersection Observer slidien tunnistamiseen
+    
     useEffect(() => {
-        const options = {
-            root: null, // Käytä viewport pohjana (ei karusellia)
-            rootMargin: '0px',
-            threshold: 0.7
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const slideIndex = parseInt(entry.target.dataset.slideIndex, 10);
-                    setActiveSlide(slideIndex);
-                }
-            });
-        }, options);
-        
-        // Etsi kaikki slidet ja kuuntele niitä
-        const slides = document.querySelectorAll('.carousel-slide');
-        slides.forEach(slide => observer.observe(slide));
-        
-        return () => {
-            slides.forEach(slide => observer.unobserve(slide));
-        };
-    }, []);
+        // Suorita vain jos ei ole mobiililaite
+        console.log(isMobile);
+        if (!isMobile) {
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.7
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const slideIndex = parseInt(entry.target.dataset.slideIndex, 10);
+                        setActiveSlide(slideIndex);
+                    }
+                });
+            }, options);
+            
+            const slides = document.querySelectorAll('.carousel-slide');
+            slides.forEach(slide => observer.observe(slide));
+            
+            return () => {
+                slides.forEach(slide => observer.unobserve(slide));
+            };
+        }
+        return () => {};
+    }, [isMobile]);
 
-    // Video-käsittelijät
     const handleMouseEnter = (videoRef) => {
         if (!isIOS && videoRef.current) {
             videoRef.current.play().catch(err => console.log("Autoplay prevented:", err));
@@ -71,12 +74,14 @@ const Projects = ({ isMobile }) => {
     };
     
     const scrollToSlide = (index) => {
-        const slideElement = document.querySelector(`[data-slide-index="${index}"]`);
-        if (slideElement && carouselRef.current) {
-            carouselRef.current.scrollTo({
-                left: slideElement.offsetLeft,
-                behavior: 'smooth'
-            });
+        if(!isMobile){
+            const slideElement = document.querySelector(`[data-slide-index="${index}"]`);
+            if (slideElement && carouselRef.current) {
+                carouselRef.current.scrollTo({
+                    left: slideElement.offsetLeft,
+                    behavior: 'smooth'
+                });
+            }
         }
     };
 
@@ -90,14 +95,14 @@ const Projects = ({ isMobile }) => {
                     <div className="carousel-slide" data-slide-index="0">
                         <div className="project-card image-card">
                             <div className="project-content">
-                                <div>
+                                <div style={{margin: 0, padding: 0}}>
                                     <h3>Notia</h3>
                                     <p>
                                         A web application for creating and sharing notes. 
                                         Built with React, Node.js, Express and MongoDB.
                                         Real time collaboration with Socket.io.
-                                        I implemented (CI/CD) pipelines with GitHub Actions,
-                                        The backend is hosted on Render, and the frontend is deployed on Vercel.
+                                        CI/CD pipelines implemented with GitHub Actions.
+                                        The backend is hosted on Render, and the frontend on Vercel.
                                     </p>
 
                                     <p style={{color: '#525150', fontSize: 12, marginTop: 10}}>
@@ -118,7 +123,7 @@ const Projects = ({ isMobile }) => {
                                         className='githubBtn' 
                                         onClick={(e) => {
                                             e.stopPropagation();
-                                            window.open('https://github.com/oskaripessinen/stock-app');
+                                            window.open('https://github.com/oskaripessinen/notia-client');
                                         }}
                                     >
                                         GitHub
@@ -157,7 +162,7 @@ const Projects = ({ isMobile }) => {
                                 />
                             </div>
                             <div className="project-content">
-                                <div style={{margin: 0, padding: 0, width: '200px'}}>
+                                <div style={{margin: 0, padding: 0, width: '225px'}}>
                                     <h3>Stocks App</h3>
                                     <p>
                                         A Mobile application for tracking stock prices and managing a stock portfolio.
@@ -203,7 +208,7 @@ const Projects = ({ isMobile }) => {
                                 />
                             </div>
                             <div className="project-content">
-                                <div style={{margin: 0, padding: 0, width: '200px'}}>
+                                <div style={{margin: 0, padding: 0, width: '225px'}}>
                                     <h3>Price Finder</h3>
                                     <p>
                                         A Mobile app for finding prices of products from different online stores. 

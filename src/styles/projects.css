@@ -1,4 +1,4 @@
-/* PUHDISTETUT JA JÄRJESTELLYT PROJEKTI TYYLIT */
+
 * {
     box-sizing: border-box;
 }
@@ -12,16 +12,14 @@
     margin: 0;
 }
 
-/* Mobiili carousel korjaukset */
 
-/* Parannetaan perus carousel-määrittelyjä mobiilitukea varten */
 .scroll-carousel-container {
     position: relative;
     border-radius: 30px;
     width: 100%;
     max-width: 600px; 
-    margin: 0 auto; /* Keskitetty containeri */
-    padding: 0 20px; /* Lisää padding reunoille */
+    margin: 0 auto;
+    padding: 0 20px;
     box-sizing: border-box;
     display: flex; 
     flex-direction: column; 
@@ -33,22 +31,22 @@
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch; /* iOS inertia scrolling */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     padding: 20px 0;
-    position: relative; /* Lisätty tuki touch-eventeille */
-    touch-action: pan-x; /* Salli vain X-suunnan pyyhkäisy */
+    position: relative; 
+
 }
 
-/* Piilota scroll-palkit */
+
 .scroll-carousel::-webkit-scrollbar {
     display: none;
 }
 
 .carousel-slide {
     flex: 0 0 100%;
-    min-width: 100%; /* Varmistetaan että slide on aina täysi leveys */
+    min-width: 100%; 
     scroll-snap-align: center;
     scroll-snap-stop: always;
     display: flex;
@@ -134,10 +132,10 @@
     height: auto;
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    margin: 0 auto; /* Keskitä kortti */
+    margin: 0 auto; 
     transition: transform 0.5s ease, opacity 0.5s ease;
-    position: relative; /* Lisätty */
-    left: 50%; /* Lisätty */
+    position: relative; 
+    left: 50%;
     transform: translateX(-50%); 
 }
 
@@ -146,7 +144,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 100px;
     height: 400px;
     margin: 0;
     padding: 0;
@@ -163,7 +160,7 @@
     margin: 0;
     margin-top: 0.5rem;
     text-align: justify;
-    flex-grow: 1; /* Antaa tekstille tilaa kasvaa tarvittaessa */
+    flex-grow: 1;
 }
 
 .project-content h3 {
@@ -172,9 +169,9 @@
     font-family: 'Poppins';
     font-size: 18px;
     font-weight: 600;
-    margin-top: 0; /* Varmistetaan että otsikko on ylhäällä */
+    margin-top: 0; 
     margin-bottom: 1rem;
-    padding-top: 0; /* Varmistetaan että otsikko on ylhäällä */
+    padding-top: 0;
 }
 
 .project-video-container {
@@ -191,7 +188,7 @@
     border-radius: 15px;
     overflow: hidden;
     flex: 0 0 auto;
-    z-index: 2; /* Varmista että video on klikattavissa */
+    z-index: 2;
 }
 
 .play-icon {
@@ -242,8 +239,8 @@
 }
 
 .githubBtn {
-    align-self: center; /* Muutettu center -> flex-start */
-    margin-top: auto; /* Tämä työntää napin alas */
+    align-self: center;
+    margin-top: auto;
     background-color: transparent;
     color: #000;
     padding: 8px 0px;
@@ -255,10 +252,10 @@
     border-radius: 30px;
     cursor: pointer;
     font-size: 12px;
-    margin-bottom: 0; /* Varmistetaan että nappi on alhaalla */
+    margin-bottom: 0;
     border: 2px solid #000;
     transition: all 0.3s ease;
-    z-index: 2; /* Varmista että nappi on klikattavissa */
+    z-index: 2;
 }
 
 .githubBtn:hover {
@@ -266,7 +263,7 @@
     color: white;
 }
 
-/* Site-button tyylit */
+
 .site-button {
     background-color: transparent;
     color: #000;
@@ -283,7 +280,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    z-index: 2; /* Varmista että nappi on klikattavissa */
+    z-index: 2;
 }
 
 .site-button:hover {
@@ -294,11 +291,11 @@
 .site-button svg {
     width: 15px;
     height: 15px;
-    fill: currentColor; /* Käyttää parent-elementin väriä */
+    fill: currentColor;
     transition: fill 0.3s ease;
 }
 
-/* Nappien kontaineri */
+
 .button-container {
     display: flex;
     flex-direction: row;
@@ -333,9 +330,9 @@
 }
 
 .tech-bubble {
-    background-color: #f0f0f0;
+    background-color: #c1c1c1;
     cursor: pointer;
-    color: #333;
+    color: #000000;
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     font-weight: 500;
@@ -354,25 +351,33 @@
 @media (max-width: 820px) {
     .scroll-carousel-container {
         padding: 0 10px;
-        overflow: hidden;
         border-radius: 0;
         margin: 0 auto;
     }
     
     .scroll-carousel {
+        display: flex;
+        flex-direction: column;
+        overflow-y: visible;
         padding: 10px 0;
-        touch-action: pan-x; /* Varmistetaan toiminta mobiililla */
-        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: none;
+        scroll-behavior: auto;
+        cursor: default;
+        width: 100%;
     }
+
+    
     
     .carousel-slide {
         min-width: 100%;
         width: 100%;
         padding: 0;
         margin-top: 20px;
+        scroll-snap-align: unset;
+        scroll-snap-stop: unset;
     }
     
-    /* Korjaa korttien asettelu */
+
     .project-card {
         flex-direction: column;
         width: 90%;
@@ -407,6 +412,7 @@
     .project-content p {
         text-align: justify;
         font-size: 14px;
+        width: 225px;
     }
     
     .button-container {
@@ -446,7 +452,7 @@
         height: 220px;
     }
     .tech-stack {
-        width: 100%;
+        width: 225px;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
@@ -468,4 +474,14 @@
     .project-video-container {
         cursor: pointer;
     }
+}
+
+
+body {
+    overflow-y: auto !important;
+}
+
+html, body {
+    height: auto !important;
+    overflow-y: auto !important; 
 }

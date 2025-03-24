@@ -19,8 +19,7 @@ const HamburgerMenu = () => {
                     <span></span>
                 </button>
                 <div className={`menu-items ${open ? 'open' : ''}`}>
-                <Link to="about" offset={600} onClick={() => setOpen(false)}>About</Link>
-                <Link to="experience" onClick={() => setOpen(false)}>Experience</Link>
+                <Link to="about-me" onClick={() => setOpen(false)}>About</Link>
                 <Link to="projects" onClick={() => setOpen(false)}>Projects</Link>
                 <Link to="contact"  onClick={() => setOpen(false)}>Contact</Link>
             </div>

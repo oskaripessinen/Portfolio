@@ -114,8 +114,12 @@ const Projects = ({ isMobile }) => {
                                         <span className="tech-bubble">React</span>
                                         <span className="tech-bubble">Node.js</span>
                                         <span className="tech-bubble">MongoDB</span>
+                                        <span className="tech-bubble">Google Auth</span>
                                         <span className="tech-bubble">Socket.io</span>
+                                        <span className="tech-bubble">Jest</span>
+                                        <span className="tech-bubble">RTL</span>
                                         <span className="tech-bubble">GitHub Actions</span>
+                                        
                                     </div>
                                 </div>
                                 <div className="button-container">

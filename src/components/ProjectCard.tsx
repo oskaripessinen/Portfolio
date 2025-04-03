@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Play } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { useState, useRef, useEffect } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Loader } from "lucide-react";
 
-// Import your demo videos (you might need to adjust the imports based on your setup)
+// Import your demo videos
 import priceFinderDemo from "../assets/project2.mp4";
 import stockTrackerDemo from "../assets/project1.mp4";
 
@@ -17,6 +18,15 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
   const [showDemoModal, setShowDemoModal] = useState(false);
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  
+  useEffect(() => {
+    if (!showDemoModal) {
+      // Reset loading state when modal closes
+      setIsVideoLoading(true);
+    }
+  }, [showDemoModal]);
 
   // Get the appropriate demo video based on project index
   const getDemoVideo = () => {
@@ -32,6 +42,19 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       setShowDemoModal(true);
     }
     // For project 3 or others, the default link behavior works (opens in new tab)
+  };
+
+  const handleVideoCanPlay = () => {
+    setIsVideoLoading(false);
+  };
+
+  // Optimize video loading
+  const handleModalOpen = (open: boolean) => {
+    setShowDemoModal(open);
+    if (!open && videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
   };
 
   return (
@@ -85,17 +108,29 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       </Card>
 
       {/* Demo Video Modal */}
-      <Dialog open={showDemoModal} onOpenChange={setShowDemoModal}>
+      <Dialog open={showDemoModal} onOpenChange={handleModalOpen}>
         <DialogContent className="max-w-[320px] rounded-xl overflow-hidden">
           <DialogHeader>
             <DialogTitle>{project.title} Demo</DialogTitle>
           </DialogHeader>
-          <div className="overflow-hidden mt-2">
+          <div className="overflow-hidden mt-2 relative">
+            {isVideoLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50 z-10 rounded-lg">
+                <div className="flex flex-col items-center">
+                  <Loader className="h-8 w-8 animate-spin text-primary" />
+                  <span className="mt-2 text-sm text-white">Loading demo...</span>
+                </div>
+              </div>
+            )}
             <video 
+              ref={videoRef}
               src={getDemoVideo()} 
-              controls 
+              controls
+              preload="auto"
               autoPlay
-              className="w-full rounded-lg"
+              onCanPlay={handleVideoCanPlay}
+              onLoadedData={handleVideoCanPlay}
+              className={`w-full rounded-lg ${isVideoLoading ? "opacity-50" : "opacity-100"}`}
             >
               Your browser does not support the video tag.
             </video>

@@ -107,21 +107,12 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         </CardFooter>
       </Card>
 
-      {/* Demo Video Modal */}
       <Dialog open={showDemoModal} onOpenChange={handleModalOpen}>
-        <DialogContent className="max-w-[320px] rounded-xl overflow-hidden">
+        <DialogContent className="max-w-[320px] !rounded-2xl">
           <DialogHeader>
             <DialogTitle>{project.title} Demo</DialogTitle>
           </DialogHeader>
           <div className="overflow-hidden mt-2 relative">
-            {isVideoLoading && (
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50 z-10 rounded-lg">
-                <div className="flex flex-col items-center">
-                  <Loader className="h-8 w-8 animate-spin text-primary" />
-                  <span className="mt-2 text-sm text-white">Loading demo...</span>
-                </div>
-              </div>
-            )}
             <video 
               ref={videoRef}
               src={getDemoVideo()} 

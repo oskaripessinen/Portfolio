@@ -59,7 +59,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
   return (
     <>
-      <Card className="overflow-hidden animate-slide-up flex flex-col h-full" style={{ animationDelay: `${index * 0.1}s` }}>
+      <Card className="overflow-hidden bg-[#0a1019] animate-slide-up flex flex-col h-full" style={{ animationDelay: `${index * 0.1}s` }}>
         <div className="aspect-video w-full overflow-hidden bg-gray-100">
           <img 
             src={project.image}

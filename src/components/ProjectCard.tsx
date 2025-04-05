@@ -59,12 +59,12 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
   return (
     <>
-      <Card className="overflow-hidden bg-[#0a1019] animate-slide-up flex flex-col h-full" style={{ animationDelay: `${index * 0.1}s` }}>
-        <div className="aspect-video w-full overflow-hidden bg-gray-100">
+      <Card className="overflow-hidden bg-gray-900 animate-slide-up flex rounded-0 flex-col h-full" style={{ animationDelay: `${index * 0.1}s` }}>
+        <div className="aspect-video w-full overflow-hidden bg-gray-900">
           <img 
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover filter brightness-200"
           />
         </div>
         <CardHeader>
@@ -112,7 +112,14 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           <DialogHeader>
             <DialogTitle>{project.title} Demo</DialogTitle>
           </DialogHeader>
-          <div className="overflow-hidden mt-2 relative">
+          <div className="overflow-hidden mt-2 relative w-240px]">
+            {isVideoLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/80 z-10 rounded-lg">
+                <div className="flex flex-col items-center">
+                  <Loader className="h-8 w-8 animate-spin text-primary" />
+                </div>
+              </div>
+            )}
             <video 
               ref={videoRef}
               src={getDemoVideo()} 
@@ -121,7 +128,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
               autoPlay
               onCanPlay={handleVideoCanPlay}
               onLoadedData={handleVideoCanPlay}
-              className={`w-full rounded-lg ${isVideoLoading ? "opacity-50" : "opacity-100"}`}
+              className={`w-full h-full object-cover rounded-lg ${isVideoLoading ? "opacity-0" : "opacity-100"}`}
             >
               Your browser does not support the video tag.
             </video>

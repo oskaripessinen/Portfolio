@@ -35,6 +35,29 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
     return null;
   };
 
+  // Get video dimensions based on project index
+  const getVideoDimensions = () => {
+    // Define different dimensions for different projects
+    if (index === 1) {
+      return {
+        width: "w-[270px]",
+        height: "h-[550px]",
+      };
+    } else if (index === 2) {
+      return {
+        width: "w-[270px]",
+        height: "h-[480px]",
+      };
+    }
+    
+    // Default dimensions (16:9)
+    return {
+      width: "w-full",
+      height: "w-full",
+      
+    };
+  };
+
   const handleDemoClick = (e: React.MouseEvent) => {
     // For projects 1 and 2, show modal instead of navigating
     if (index === 2 || index === 1) {
@@ -56,6 +79,9 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       videoRef.current.currentTime = 0;
     }
   };
+
+  // Get the dimensions for current project
+  const { height, width } = getVideoDimensions();
 
   return (
     <>
@@ -112,9 +138,9 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           <DialogHeader>
             <DialogTitle>{project.title} Demo</DialogTitle>
           </DialogHeader>
-          <div className="overflow-hidden mt-2 relative w-240px]">
+          <div className={`overflow-hidden mt-2 relative`}>
             {isVideoLoading && (
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/80 z-10 rounded-lg">
+              <div className={`absolute inset-0 flex items-center justify-center bg-gray-800/80 z-10 rounded-lg ${width} ${height}`}>
                 <div className="flex flex-col items-center">
                   <Loader className="h-8 w-8 animate-spin text-primary" />
                 </div>
@@ -128,7 +154,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
               autoPlay
               onCanPlay={handleVideoCanPlay}
               onLoadedData={handleVideoCanPlay}
-              className={`w-full h-full object-cover rounded-lg ${isVideoLoading ? "opacity-0" : "opacity-100"}`}
+              className={`${height} ${width} object-contain rounded-lg transition-opacity duration-300 ${isVideoLoading ? "opacity-0" : "opacity-100"}`}
             >
               Your browser does not support the video tag.
             </video>

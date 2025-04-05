@@ -90,7 +90,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           <img 
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover filter brightness-200"
+            className="w-full h-full object-cover filter brightness-150"
           />
         </div>
         <CardHeader>

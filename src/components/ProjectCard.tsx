@@ -64,7 +64,6 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       e.preventDefault();
       setShowDemoModal(true);
     }
-    // For project 3 or others, the default link behavior works (opens in new tab)
   };
 
   const handleVideoCanPlay = () => {
@@ -96,6 +95,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         <CardHeader>
           <CardTitle>{project.title}</CardTitle>
           <CardDescription>{project.description}</CardDescription>
+          <span className="text-xs text-gray-600 font-light">{project.Notice}</span>
         </CardHeader>
         <CardContent className="flex-grow">
           <div className="flex flex-wrap gap-2 mb-4">

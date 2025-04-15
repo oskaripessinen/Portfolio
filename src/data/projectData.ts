@@ -9,6 +9,7 @@ export interface Project {
   technologies: string[];
   demoLink?: string;
   githubLink?: string;
+  Notice?: string;
 }
 
 export const projects: Project[] = [
@@ -18,7 +19,8 @@ export const projects: Project[] = [
     description: "A real-time note-taking application with user authentication and real-time collaboration features. Built with React, Node.js, and Socket.io.",
     technologies: ["React", "Node.js", "MongoDB", "Google Auth", "Socket.io", "Jest", "RTL", "GitHub Actions"],
     demoLink: "https://notia-client.vercel.app/login",
-    githubLink: "https://github.com/oskaripessinen/notia-client"
+    githubLink: "https://github.com/oskaripessinen/notia-client",
+    Notice: "Server is hosted on free tier, so it may take a moment to spin up."
   },
   {
     image: project2,

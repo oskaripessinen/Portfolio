@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section 
       id="hero" 
-      className="min-h-screen flex flex-col justify-center pt-20 bg-gradient-to-br from-gray-900 to-gray-800"
+      className="min-h-screen flex flex-col justify-center bg-gradient-to-br from-gray-900 to-gray-800"
     >
       {/* Improved container with better spacing */}
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center md:items-center">

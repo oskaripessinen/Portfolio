@@ -1,9 +1,10 @@
 import project2 from "../assets/project2.png";
 import project1 from "../assets/project1.png";
 import project3 from "../assets/project3.png";
+import project4 from "../assets/project4.png";
 
 export interface Project {
-  image: any;  
+  image: string;  
   title: string;
   description: string;
   technologies: string[];
@@ -13,6 +14,15 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    image: project4,
+    title: "Shareflow",
+    description: "Shared finance management app that allows users to track shared expenses, manage budgets, and collaborate with friends or family.",
+    technologies: ["React-Native","Expo", "Node.js","Express", "Supabase", "Google Auth", "Google vision"],
+    demoLink: "#",
+    githubLink: "https://github.com/oskaripessinen/Finance-Tracker",
+  },
+
   {
     image: project3,
     title: "Notia",

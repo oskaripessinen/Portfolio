@@ -2,9 +2,9 @@ import React from "react";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-gray-900 text-white">
-      <div className="container-section">
-        <div className="max-w-4xl mx-auto">
+    <section id="about" className="min-h-screen justify-center flex bg-gray-900 text-white">
+      <div className="container-section justify-center flex flex-col items-center">
+        <div className="max-w-4xl ">
           <h2 className="section-title text-center text-white">About Me</h2>
           <p className="section-subtitle text-center mx-auto text-gray-300 text-justify">
           I am a passionate full-stack developer with a strong foundation in both front-end and back-end development. Currently pursuing my bachelor's degree in Information and Communication Technology, I combine academic knowledge with practical experience in building web and mobile applications

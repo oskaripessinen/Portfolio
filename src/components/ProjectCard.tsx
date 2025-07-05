@@ -78,7 +78,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
   return (
     <>
-      <Card className="overflow-hidden bg-gray-900 animate-slide-up flex rounded-xl flex-col h-full" style={{ animationDelay: `${index * 0.1}s` }}>
+      <Card className="overflow-hidden bg-gray-900 animate-slide-up flex rounded-xl flex-col gap-0" style={{ animationDelay: `${index * 0.1}s` }}>
         <div className="aspect-video w-full overflow-hidden bg-gray-900">
           <img 
             src={project.image}
@@ -86,13 +86,13 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             className="w-full h-full object-cover filter brightness-150"
           />
         </div>
-        <CardHeader>
+        <CardHeader className="min-h-[130px] flex flex-col justify-start m-0">
           <CardTitle>{project.title}</CardTitle>
           <CardDescription>{project.description}</CardDescription>
           <span className="text-xs text-gray-600 font-light">{project.Notice}</span>
         </CardHeader>
-        <CardContent className="flex-grow">
-          <div className="flex flex-wrap gap-2 mb-4">
+        <CardContent className="flex-grow m-0">
+          <div className="flex flex-wrap gap-2 justify-start items-start ">
             {project.technologies.map((tech, i) => (
               <Badge key={i} variant="secondary">{tech}</Badge>
             ))}
@@ -100,7 +100,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         </CardContent>
         <CardFooter className="mt-auto flex justify-between">
           {project.demoLink && (
-            <Button variant="outline" size="sm" asChild>
+            <Button variant="default" size="sm" asChild>
               <a 
                 href={project.demoLink} 
                 target="_blank" 
@@ -112,15 +112,15 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 ) : (
                   <ExternalLink className="mr-0 h-4 w-4" />
                 )}
-                <span className="text-base text-[13px]">Demo</span>
+                <span className="text-[12px]">Demo</span>
               </a>
             </Button>
           )}
           {project.githubLink && (
             <Button variant="outline" size="sm" asChild>
-              <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="text-base font-sm">
+              <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
                 <Github className="mr-0 h-4 w-4" />
-                <span className="text-base text-[13px]">
+                <span className="text-[12px]">
                   Github
                 </span>
               </a>

@@ -26,17 +26,17 @@ export const projects: Project[] = [
   {
     image: project3,
     title: "Notia",
-    description: "A real-time note-taking application with user authentication and real-time collaboration features. Built with React, Node.js, and Socket.io.",
+    description: "A real-time note-taking application with user authentication and real-time collaboration features.",
     technologies: ["React", "Node.js", "MongoDB", "Google Auth", "Socket.io", "Jest", "RTL", "GitHub Actions"],
     demoLink: "https://notia-client.vercel.app/login",
     githubLink: "https://github.com/oskaripessinen/notia-client",
-    Notice: "Server is hosted on free tier, so it may take a moment to spin up."
+    Notice: "Server may take a moment to spin up."
   },
   {
     image: project2,
     title: "Stock Tracker",
     description: "A Mobile application for tracking stock prices and managing a stock portfolio. Built with React native and Yahoo finance Api for real time stock data.",
-    technologies: ["React Native", "Expo", "Yahooo Finance API",],
+    technologies: ["React Native","Yahooo Finance API", "Expo",],
     demoLink: "#",
     githubLink: "https://github.com/oskaripessinen/stock-app"
   },

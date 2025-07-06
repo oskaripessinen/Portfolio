@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-
+import { Home, User, Folder, Mail } from "lucide-react"
+ 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,10 +21,10 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#hero" },
-    { name: "About Me", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "#hero", icon : <Home className="h-4 w-4" /> },
+    { name: "About Me", href: "#about", icon : <User className="h-4 w-4" /> },
+    { name: "Projects", href: "#projects", icon : <Folder className="h-4 w-4" /> },
+    { name: "Contact", href: "#contact", icon : <Mail className="h-4 w-4" /> },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -43,18 +44,22 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between py-0">
-        <a href="#hero" className="text-2xl font-bold text-primary">
-          Oskari Pessinen
-        </a>
-
-        {/* Desktop Navigation */}
+        <div className="flex flex-col items-start">
+          <a href="#hero" className="text-2xl font-bold text-primary">
+            Oskari Pessinen
+          </a>
+          <span className="text-gray-300 font-semibold text-sm tracking-wide px-1 -mt-1">
+            Software Engineer
+          </span>
+        </div>
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <button
               key={link.name}
               onClick={() => scrollToSection(link.href)}
-              className="text-gray-300 hover:text-primary transition-colors"
+              className="text-gray-300 hover:text-primary transition-colors flex-row flex items-center gap-1"
             >
+              {link.icon}
               {link.name}
             </button>
           ))}
@@ -78,8 +83,9 @@ const Header = () => {
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className="block w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-primary transition-colors"
+                className="block w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-primary transition-colors flex flex-row items-center gap-1"
               >
+                {link.icon}
                 {link.name}
               </button>
             ))}

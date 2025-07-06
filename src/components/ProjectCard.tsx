@@ -29,8 +29,8 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
 
   const getDemoVideo = () => {
-    if (index === 2) return priceFinderDemo;
-    if (index === 1) return stockTrackerDemo;
+    if (index === 3) return priceFinderDemo;
+    if (index === 2) return stockTrackerDemo;
     return null;
   };
 
@@ -56,7 +56,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
   };
 
   const handleDemoClick = (e: React.MouseEvent) => {
-    if (index === 2 || index === 1) {
+    if (index === 3 || index === 2) {
       e.preventDefault();
       setShowDemoModal(true);
     }
@@ -92,9 +92,11 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           <span className="text-xs text-gray-600 font-light">{project.Notice}</span>
         </CardHeader>
         <CardContent className="flex-grow m-0">
-          <div className="flex flex-wrap gap-2 justify-start items-start ">
+          <div className="flex flex-wrap gap-2 mb-4 justify-start items-center">
             {project.technologies.map((tech, i) => (
-              <Badge key={i} variant="secondary">{tech}</Badge>
+              <Badge key={i} variant="secondary">
+                {tech}
+              </Badge>
             ))}
           </div>
         </CardContent>
@@ -107,7 +109,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 rel="noopener noreferrer"
                 onClick={handleDemoClick}
               >
-                {index === 2 || index === 1 ? (
+                {index === 2 || index === 3 || index === 0 ? (
                   <Play className="mr-0 h-4 w-4" />
                 ) : (
                   <ExternalLink className="mr-0 h-4 w-4" />

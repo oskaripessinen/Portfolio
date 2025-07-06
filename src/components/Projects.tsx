@@ -5,7 +5,7 @@ import { projects } from "@/data/projectData";
 const Projects = () => {
   return (
     <section id="projects" className="min-h-screen justify-center bg-gray-800 md:pt-0 pt-10 text-white">
-      <div className="container-section w-[95%] md:w-full">
+      <div className="container-section w-[98%] md:w-full">
         <h2 className="section-title text-center text-white">Projects</h2>
         <p className="section-subtitle text-center mx-auto text-gray-300">
           Explore my latest projects.

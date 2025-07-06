@@ -30,11 +30,11 @@ const Hero = () => {
           <h1 className="flex flex-col text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Hi, I'm <span className="text-primary">Oskari Pessinen</span>
           </h1>
-          <p className="text-xl text-gray-300 mb-8 max-w-lg mx-auto md:mx-0">
+          <p className="text-xl text-gray-300 mb-8 max-w-lg mx-5 md:mx-0">
             Full-stack software developer building modern and user-friendly web applications.
           </p>
           {/* Buttons */}
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start md:flex-row flex-col md:mx-0 mx-20">
             <Button size="lg" onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}>
               Contact Me <ArrowRight className="ml-2 h-4 w-4" />
             </Button>

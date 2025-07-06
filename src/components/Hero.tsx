@@ -3,15 +3,30 @@ import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import Me from "../assets/me.jpg";
 
 const Hero = () => {
+  const isMobile = window.innerWidth < 768;
+
   return (
     <section 
       id="hero" 
-      className="min-h-screen flex flex-col justify-center bg-gradient-to-br from-gray-900 to-gray-800"
+      className="min-h-screen flex flex-col justify-center bg-gradient-to-br from-gray-900 to-gray-800 md:pt-0 pt-10 "
     >
       {/* Improved container with better spacing */}
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center md:items-center">
+      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center md:items-center w-[95%] md:w-full">
         {/* Left column with text content */}
-        <div className="w-full md:w-1/2 lg:w-5/12 mb-12 md:mb-0 animate-fade-in text-center md:text-left">
+        {isMobile && (
+          <div className="flex justify-center animate-fade-in md:mt-0 mb-8">
+          <div className="relative">
+            <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 bg-gray-800 rounded-full overflow-hidden shadow-xl">
+              <img 
+                src={Me}
+                alt="Oskari Pessinen"
+                className="h-full w-screen object-cover rounded-full border-4 border-gray-700" 
+              />
+            </div>
+          </div>
+        </div>
+        )}
+        <div className="w-screen md:w-1/2 lg:w-5/12 md:mb-0 animate-fade-in text-center md:text-left w-[95%] md:w-full">
           <h1 className="flex flex-col text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Hi, I'm <span className="text-primary">Oskari Pessinen</span>
           </h1>
@@ -42,17 +57,19 @@ const Hero = () => {
         </div>
         
         {/* Right column with image */}
-        <div className="flex justify-center animate-fade-in md:mt-0 mb-8">
+        {!isMobile && (
+          <div className="flex justify-center animate-fade-in md:mt-0 mb-8">
           <div className="relative">
-            <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 bg-gray-800 rounded-full overflow-hidden shadow-xl">
+            <div className="w-72 h-72 lg:w-80 lg:h-80 bg-gray-800 rounded-full overflow-hidden shadow-xl">
               <img 
                 src={Me}
                 alt="Oskari Pessinen"
-                className="h-full w-full object-cover rounded-full border-4 border-gray-700" 
+                className="h-full w-screen object-cover rounded-full border-4 border-gray-700" 
               />
             </div>
           </div>
         </div>
+        )}
       </div>
     </section>
   );

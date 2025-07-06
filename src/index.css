@@ -10,12 +10,15 @@ html {
   /* Add this line to prevent width changes */
   margin-right: 0 !important;
   overflow-x: hidden !important;
+  max-width: 100vw;
+
 }
 
 body {
-  /* Add this to prevent width changes */
-  width: 100%;
+
   overflow-x: hidden;
+  max-width: 100vw;
+
 }
 
 @layer base {

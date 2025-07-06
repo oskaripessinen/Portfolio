@@ -43,7 +43,7 @@ const Header = () => {
           : "bg-transparent py-4"
       }`}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between py-0">
+      <div className="container mx-auto px-4 flex items-center justify-between py-0 w-[95%] md:w-full ">
         <div className="flex flex-col items-start">
           <a href="#hero" className="text-2xl font-bold text-primary">
             Oskari Pessinen
@@ -57,7 +57,7 @@ const Header = () => {
             <button
               key={link.name}
               onClick={() => scrollToSection(link.href)}
-              className="text-gray-300 hover:text-primary transition-colors flex-row flex items-center gap-1"
+              className="text-gray-300 hover:text-primary transition-colors flex-row flex items-center gap-2"
             >
               {link.icon}
               {link.name}
@@ -77,13 +77,13 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-gray-900/95 shadow-lg absolute right-0 top-full w-48 rounded-bl-lg">
+        <div className="md:hidden bg-gray-900/95 shadow-lg absolute right-0 w-48 rounded-lg mr-2">
           <div className="py-3 space-y-1">
             {navLinks.map((link) => (
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className="block w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-primary transition-colors flex flex-row items-center gap-1"
+                className="block text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-primary transition-colors flex flex-row items-center gap-2"
               >
                 {link.icon}
                 {link.name}

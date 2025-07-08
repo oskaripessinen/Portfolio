@@ -36,12 +36,12 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
 
   const getVideoDimensions = () => {
-    if (index === 1) {
+    if (index === 2) {
       return {
         width: "w-[270px]",
         height: "h-[550px]",
       };
-    } else if (index === 2) {
+    } else if (index === 3) {
       return {
         width: "w-[270px]",
         height: "h-[480px]",

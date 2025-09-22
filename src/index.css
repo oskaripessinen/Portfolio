@@ -5,27 +5,23 @@
 @tailwind utilities;
 
 html {
-  overflow-y: scroll;
-  width: 100vw;
-  /* Add this line to prevent width changes */
-  margin-right: 0 !important;
+  overflow-y: auto;    
   overflow-x: hidden !important;
-  max-width: 100vw;
 
 }
 
 body {
-  padding-right: 0 !important;
-  box-sizing: border-box;
-
-  overflow-x: hidden;
-  max-width: 100vw;
-
+  overflow-x: clip;
 }
 
-/* Varmista että kaikki elementit käyttävät border-box */
-*, *::before, *::after {
-  box-sizing: border-box;
+.react-remove-scroll-body,
+.react-remove-scroll-bar {
+  padding-right: var(--removed-body-scroll-bar-size) !important;
+  margin-right: 0 !important;
+}
+
+html, body {
+  overflow-x: clip; 
 }
 
 @layer base {

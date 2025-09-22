@@ -20,13 +20,13 @@ const Hero = () => {
               <img 
                 src={Me}
                 alt="Oskari Pessinen"
-                className="h-full w-screen object-cover rounded-full border-4 border-gray-700" 
+                className="h-full w-full object-cover rounded-full border-4 border-gray-700" 
               />
             </div>
           </div>
         </div>
         )}
-        <div className="w-screen md:w-1/2 lg:w-5/12 md:mb-0 animate-fade-in text-center md:text-left w-[95%] md:w-full">
+        <div className="w-full md:w-1/2 lg:w-5/12 md:mb-0 animate-fade-in text-center md:text-left w-[95%] md:w-full">
           <h1 className="flex flex-col text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Hi, I'm <span className="text-primary">Oskari Pessinen</span>
           </h1>
@@ -64,7 +64,7 @@ const Hero = () => {
               <img 
                 src={Me}
                 alt="Oskari Pessinen"
-                className="h-full w-screen object-cover rounded-full border-4 border-gray-700" 
+                className="h-full w-full object-cover rounded-full border-4 border-gray-700" 
               />
             </div>
           </div>

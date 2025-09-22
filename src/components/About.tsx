@@ -11,8 +11,8 @@ const About = () => {
           </p>
           
           <div className="flex justify-center">
-            <div className="bg-gray-800 p-6 rounded-lg shadow-sm animate-slide-up text-center w-[95%] md:w-full max-w-3xl" style={{ animationDelay: '0.2s' }}>
-              <h3 className="text-xl font-bold mb-4 text-white">Education</h3>
+            <div className="bg-gray-800 p-6 rounded-2xl shadow-sm animate-slide-up text-center w-[95%] md:w-full max-w-3xl" style={{ animationDelay: '0.2s' }}>
+              <h3 className="text-xl font-bold mb-4 text-center text-white">Education</h3>
               <div className="space-y-4">
                 <div>
                   <h4 className="font-medium text-white">B.Sc. in Information and Communication Technology</h4>
@@ -23,7 +23,13 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="font-medium text-white">Web Development Certificate</h4>
-                  <p className="text-gray-400">Fullstackopen · 2024</p>
+                  <div className="flex flex-row text-center items-center justify-center gap-1">
+                    <a href="https://fullstackopen.com/en" target="_blank" rel="noopener noreferrer"
+                       className="text-gray-400 hover:text-gray-200 underline underline-offset-1">
+                      Fullstackopen
+                    </a>
+                    <p className="text-gray-400">· 2024</p>
+                  </div>
                 </div>
               </div>
             </div>

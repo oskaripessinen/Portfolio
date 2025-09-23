@@ -29,7 +29,7 @@ export const projects: Project[] = [
     title: "Notia",
     description: "A real-time note-taking application with user authentication and real-time collaboration features.",
     technologies: ["React", "Node.js", "MongoDB", "Google Auth", "Socket.io", "Jest", "RTL", "GitHub Actions"],
-    demoLink: "https://notia-client.vercel.app/login",
+    demoLink: "",
     githubLink: "https://github.com/oskaripessinen/notia-client",
     Notice: "Server may take a moment to spin up."
   },

@@ -10,14 +10,14 @@ import { Loader } from "lucide-react";
 import priceFinderDemo from "../assets/project2.mp4";
 import stockTrackerDemo from "../assets/project1.mp4";
 
-import proj4_img1 from "../assets/IMG_0102.png"
-import proj4_img2 from "../assets/IMG_0103.png"
-import proj4_img3 from "../assets/IMG_0104.png"
-import proj4_img4 from "../assets/IMG_0105.png"
-import proj4_img5 from "../assets/IMG_0106.png"
+import proj4_img4 from "../assets/IMG_0102.png"
+import proj4_img3 from "../assets/IMG_0103.png"
+import proj4_img1 from "../assets/IMG_0104.png"
+import proj4_img2 from "../assets/IMG_0105.png"
+import proj4_img7 from "../assets/IMG_0106.png"
 import proj4_img6 from "../assets/IMG_0107.png"
-import proj4_img7 from "../assets/IMG_0108.png"
-import proj4_img8 from "../assets/IMG_0109.png"
+import proj4_img8 from "../assets/IMG_0108.png"
+import proj4_img5 from "../assets/IMG_0109.png"
 
 interface ProjectCardProps {
   project: Project;
@@ -150,7 +150,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
               </a>
             </Button>
           )}
-          {project.githubLink && (
+          {project.githubLink && project.demoLink ? (
             <Button variant="outline" size="sm" asChild>
               <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
                 <Github className="mr-0 h-4 w-4" />
@@ -159,7 +159,16 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 </span>
               </a>
             </Button>
-          )}
+          ) : 
+          <Button variant="outline" size="sm" className="min-w-full py-4 mx-auto" asChild>
+              <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                <Github className="mr-0 h-4 w-4" />
+                <span className="text-[12px]">
+                  Github
+                </span>
+              </a>
+            </Button>
+          }
         </CardFooter>
       </Card>
 

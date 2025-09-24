@@ -32,18 +32,16 @@ const Hero = () => {
             Full-stack software developer building modern and user-friendly web applications.
           </p>
           <div className="flex flex-col">
-            {/* CTA-napit: vain sisällön levyinen */}
-            <div className="inline-flex w-fit items-center gap-4 mx-auto md:mx-0">
-              <Button size="lg" onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}>
+            <div className="items-center flex flex-col md:flex-row justify-center md:justify-start gap-4 w-full px-5 md:px-0">
+              <Button size="lg" className="w-full md:w-auto justify-center" onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}>
                 Contact Me <ArrowRight className="ml-1 h-4 w-4" />
               </Button>
-              <Button size="lg" variant='outline' onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Button size="lg" className="w-full md:w-auto justify-center" variant='outline' onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}>
                 View Projects
               </Button>
             </div>
 
-            {/* Some-napit: vain sisällön levyinen */}
-            <div className="inline-flex w-fit items-center gap-4 mt-4 mb-8 md:mb-0 mx-auto md:mx-0">
+            <div className="inline-flex items-center gap-4 mt-4 mb-8 md:mb-0 mx-auto md:mx-0">
               <Button onClick={() => window.open('https://github.com/oskaripessinen')} variant="ghost" size="icon" className="rounded-full text-gray-300 hover:text-white hover:bg-gray-800" aria-label="Github">
                 <Github className="h-5 w-5" />
               </Button>

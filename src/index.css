@@ -138,7 +138,21 @@ html, body {
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .reveal-init {
+    opacity: 0;
+  }
+  @keyframes carousel-in-left {
+    0% { opacity: 0.3; transform: translateX(0px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes carousel-in-right {
+    0% { opacity: 0.3; }
+    100% { opacity: 1; }
+  }
+  .animate-carousel-in-left {
+    animation: carousel-in-left .7s ease;
+  }
+  .animate-carousel-in-right {
+    animation: carousel-in-right .7s ease;
   }
 }

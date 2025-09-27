@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { useReveal } from "@/hooks/useReveal";
 import { Menu, X } from "lucide-react";
 import { Home, User, Folder, Mail } from "lucide-react"
  
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  useReveal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,13 +38,14 @@ const Header = () => {
 
   return (
     <header
+      
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-gray-900/90 backdrop-blur-md shadow-sm py-4"
           : "bg-transparent py-4"
       }`}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between py-0 w-[95%] md:w-full ">
+      <div className="animate-fade-in container mx-auto px-4 flex items-center justify-between py-0 w-[95%] md:w-full ">
         <div className="flex flex-col items-start">
           <a href="#hero" className="text-2xl font-bold text-primary">
             Oskari Pessinen

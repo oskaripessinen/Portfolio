@@ -28,7 +28,8 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
   const [showDemoModal, setShowDemoModal] = useState(false);
   const [isVideoLoading, setIsVideoLoading] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [imageIndex, setImageIndex] = useState(0); // ShareFlow galleria
+  const [imageIndex, setImageIndex] = useState(0);
+  const [direction, setDirection] = useState<1 | -1>(1); // 1 = next, -1 = prev
   
   useEffect(() => {
     if (!showDemoModal) {
@@ -110,7 +111,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
   return (
     <>
-      <Card className="overflow-hidden bg-gray-900 animate-slide-up flex rounded-[1.4rem] flex-col gap-0" style={{ animationDelay: `${index * 0.1}s` }}>
+      <Card className="overflow-hidden bg-gray-900 flex rounded-[1.4rem] flex-col gap-0">
         <div className="aspect-video w-full overflow-hidden bg-gray-900">
           <img 
             src={project.image}
@@ -124,12 +125,14 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           <span className="text-xs text-gray-600 font-light">{project.Notice}</span>
         </CardHeader>
         <CardContent className="flex-grow m-0">
-          <div className="flex flex-wrap gap-2 mb-4 justify-start items-center">
-            {project.technologies.map((tech, i) => (
-              <Badge key={i} variant="secondary">
-                {tech}
-              </Badge>
-            ))}
+          <div className="min-h-[100px]">
+            <div className="flex flex-wrap gap-2 mb-4 justify-start items-center">
+              {project.technologies.map((tech, i) => (
+                <Badge key={i} variant="secondary">
+                  {tech}
+                </Badge>
+              ))}
+            </div>
           </div>
         </CardContent>
         <CardFooter className="mt-auto flex justify-between">
@@ -184,25 +187,37 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 <button
                   type="button"
                   aria-label="Previous image"
-                  onClick={() =>
+                  onClick={() => {
+                    setDirection(-1)
                     setImageIndex((prev) => (prev - 1 + images.length) % images.length)
-                  }
+                  }}
                   className="mr-2 text-white p-1 rounded-full"
                 >
                   <ChevronLeft className="h-7 w-7" />
                 </button>
 
-                <div className={`relative ${width} ${height} overflow-hidden flex items-center justify-center mx-auto`}>
-                  <img
-                    src={images[imageIndex]}
-                    alt={`${project.title} screenshot ${imageIndex + 1}`}
-                    className="h-full w-full rounded-lg"
-                  />
+                <div className={`relative ${width} ${height} overflow-hidden rounded-lg flex items-center justify-center mx-auto`}>
+                  <div
+                    key={imageIndex}
+                    className={`absolute inset-0 flex items-center justify-center ${
+                      direction === 1 ? "animate-carousel-in-left" : "animate-carousel-in-right"
+                    }`}
+                  >
+                    <img
+                      src={images[imageIndex]}
+                      alt={`${project.title} screenshot ${imageIndex + 1}`}
+                      className="h-full w-full rounded-lg object-cover"
+                    />
+                  </div>
                 </div>
+
                 <button
                   type="button"
                   aria-label="Next image"
-                  onClick={() => setImageIndex((prev) => (prev + 1) % images.length)}
+                  onClick={() => {
+                    setDirection(1)
+                    setImageIndex((prev) => (prev + 1) % images.length)
+                  }}
                   className="ml-2 text-white p-1 rounded-full"
                 >
                   <ChevronRight className="h-7 w-7" />
@@ -215,7 +230,11 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                     key={i}
                     type="button"
                     aria-label={`Go to image ${i + 1}`}
-                    onClick={() => setImageIndex(i)}
+                    onClick={() => {
+                      if (i === imageIndex) return
+                      setDirection(i > imageIndex ? 1 : -1)
+                      setImageIndex(i)
+                    }}
                     className={`h-2 w-2 rounded-full transition-colors ${i === imageIndex ? "bg-primary" : "bg-gray-600"}`}
                   />
                 ))}

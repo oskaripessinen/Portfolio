@@ -1,17 +1,17 @@
-import React from "react";
+import { useReveal } from "@/hooks/useReveal";
 
 const About = () => {
   return (
     <section id="about" className="min-h-screen justify-center flex bg-gray-900 text-white">
       <div className="container-section justify-center flex flex-col items-center">
         <div className="max-w-4xl ">
-          <h2 className="section-title text-center text-white">About Me</h2>
-          <p className="section-subtitle mx-auto text-gray-300 font-sans text-lg w-[95%] md:w-full">
+          <h2 data-reveal className="section-title text-center text-white">About Me</h2>
+          <p data-reveal className="section-subtitle mx-auto text-gray-300 font-sans text-lg w-[95%] md:w-full">
           I am a passionate full-stack developer with a strong foundation in both front-end and back-end development. Currently pursuing my bachelor's degree in Information and Communication Technology, I combine academic knowledge with practical experience in building web and mobile applications.
           </p>
           
           <div className="flex justify-center">
-            <div className="bg-gray-800 p-6 rounded-2xl shadow-sm animate-slide-up text-center w-[95%] md:w-full max-w-3xl" style={{ animationDelay: '0.2s' }}>
+            <div data-reveal className="bg-gray-800 p-6 rounded-2xl shadow-sm text-center w-[95%] md:w-full max-w-3xl">
               <h3 className="text-xl font-bold mb-4 text-center text-white">Education</h3>
               <div className="space-y-4">
                 <div>

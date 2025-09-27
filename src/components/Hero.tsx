@@ -1,18 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import Me from "../assets/me.jpg";
+import { useReveal } from "@/hooks/useReveal";
 
 const Hero = () => {
   const isMobile = window.innerWidth < 768;
+  useReveal();
 
   return (
     <section 
       id="hero" 
       className="min-h-screen flex flex-col justify-center bg-gradient-to-br from-gray-900 to-gray-800 md:pt-0 pt-10 "
     >
-      <div className="container flex flex-col md:flex-row items-center justify-center px-5 md:items-center w-full">
+      <div data-reveal className="container flex flex-col md:flex-row items-center justify-center px-5 md:items-center w-full">
         {isMobile && (
-          <div className="flex justify-center animate-fade-in mt-8 mb-8">
+          <div className="flex justify-center mt-8 mb-8">
           <div className="relative">
             <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 bg-gray-800 rounded-full overflow-hidden shadow-xl">
               <img 
@@ -24,7 +26,7 @@ const Hero = () => {
           </div>
         </div>
         )}
-        <div className="w-full md:w-1/2 lg:w-5/12 md:mb-0 animate-fade-in text-center justify-center md:text-left md:w-full">
+        <div className="w-full md:w-1/2 lg:w-5/12 md:mb-0 text-center justify-center md:text-left md:w-full">
           <h1 className="flex flex-col text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Hi, I'm <span className="text-primary">Oskari Pessinen</span>
           </h1>
@@ -56,7 +58,7 @@ const Hero = () => {
         </div>
         
         {!isMobile && (
-          <div className="flex justify-center animate-fade-in md:mt-0 mb-8">
+          <div className="flex justify-center md:mt-0 mb-8">
           <div className="relative">
             <div className="w-72 h-72 lg:w-80 lg:h-80 bg-gray-800 rounded-full overflow-hidden shadow-xl">
               <img 

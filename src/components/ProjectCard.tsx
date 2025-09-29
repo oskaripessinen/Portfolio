@@ -125,7 +125,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           <span className="text-xs text-gray-600 font-light">{project.Notice}</span>
         </CardHeader>
         <CardContent className="flex-grow m-0">
-          <div className="min-h-[100px]">
+          <div className="md:min-h-[90px]">
             <div className="flex flex-wrap gap-2 mb-4 justify-start items-center">
               {project.technologies.map((tech, i) => (
                 <Badge key={i} variant="secondary">

@@ -35,10 +35,10 @@ const Hero = () => {
           </p>
           <div className="flex flex-col">
             <div className="items-center flex flex-col md:flex-row justify-center md:justify-start gap-4 w-full px-5 md:px-0">
-              <Button size="lg" className="w-full md:w-auto justify-center" onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Button size="default" className="w-full md:w-auto justify-center" onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}>
                 Contact Me <ArrowRight className="ml-1 h-4 w-4" />
               </Button>
-              <Button size="lg" className="w-full md:w-auto justify-center" variant='outline' onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Button size="default" className="w-full md:w-auto justify-center" variant='outline' onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}>
                 View Projects
               </Button>
             </div>

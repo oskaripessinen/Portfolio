@@ -33,7 +33,7 @@ export function Contact() {
 
           <div className="flex flex-col gap-6">
             <Link href="mailto:oskari.pessinen@gmail.com" className="group block">
-              <Card className="bg-card hover:bg-accent/30 px-5 transition-colors border-border rounded-4xl">
+              <Card className="bg-card hover:bg-accent/30 px-2 transition-colors border-border rounded-4xl">
                 <CardContent className="flex items-center justify-between px-4">
                   <div className="flex items-center gap-4">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors">
@@ -57,7 +57,7 @@ export function Contact() {
               rel="noreferrer"
               className="group block"
             >
-              <Card className="bg-card hover:bg-accent/30 transition-colors px-5 border-border rounded-4xl">
+              <Card className="bg-card hover:bg-accent/30 transition-colors px-2 border-border rounded-4xl">
                 <CardContent className="flex items-center justify-between px-4">
                   <div className="flex items-center gap-4">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors">

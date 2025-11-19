@@ -38,7 +38,7 @@ export function Projects() {
   }, [api]);
 
   return (
-    <section id="projects" className="relative min-h-screen flex items-center py-20 md:py-32">
+    <section id="projects" className="relative min-h-screen flex flex-col justify-center py-20 md:py-32">
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10 h-full w-full overflow-hidden bg-background">
         <div className="absolute inset-0 bg-linear-to-b from-zinc-900 via-zinc-700 to-zinc-900 opacity-10 dark:opacity-5" />
@@ -59,7 +59,9 @@ export function Projects() {
             Here are some of my recent projects I&apos;ve worked on.
           </p>
         </motion.div>
+      </Container>
 
+      <div className="w-full max-w-6xl mx-auto md:px-8">
         <div className="w-full max-w-full md:px-10">
           <Carousel
             setApi={setApi}
@@ -69,10 +71,10 @@ export function Projects() {
             }}
             className="w-full md:!loop-true"
           >
-            <CarouselContent className="-ml-4">
+            <CarouselContent className="-ml-0 md:-ml-4">
               {projects.map((project, index) => (
-                <CarouselItem key={project.id || index} className="basis-[85%] md:basis-1/2 lg:basis-1/3 pl-4">
-                  <div className="p-1 h-full">
+                <CarouselItem key={project.id || index} className="basis-full md:basis-1/2 lg:basis-1/3 pl-0 md:pl-4">
+                  <div className="p-4 md:p-1 h-full">
                     <Card className="h-full flex flex-col overflow-hidden border bg-card">
                       <CardHeader>
                         <CardTitle>
@@ -138,7 +140,7 @@ export function Projects() {
             ))}
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

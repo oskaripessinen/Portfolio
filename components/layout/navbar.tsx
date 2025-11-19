@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -70,17 +71,19 @@ export function Navbar() {
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
+              <DropdownMenuContent align="end" className="min-w-[150px] bg-background/80 backdrop-blur-md supports-backdrop-filter:bg-background/60">
                 {navLinks.map((link) => (
-                  <DropdownMenuItem key={link.href} asChild>
-                    <Link href={link.href} className="w-full cursor-pointer">
-                      {link.name}
-                    </Link>
-                  </DropdownMenuItem>
+                  <React.Fragment key={link.href}>
+                    <DropdownMenuItem asChild className="py-3 text-center">
+                      <Link href={link.href} className="w-full cursor-pointer text-base">
+                      <span className="text-center w-full">{link.name}</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  </React.Fragment>
                 ))}
-                <DropdownMenuItem asChild>
-                  <Link href="#contact" className="w-full cursor-pointer font-semibold">
-                    Contact
+                <DropdownMenuItem asChild className="py-3">
+                  <Link href="#contact" className="w-full cursor-pointer text-base text-center">
+                    <span className="text-center w-full">Contact</span>
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>

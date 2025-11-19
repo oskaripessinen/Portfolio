@@ -71,7 +71,7 @@ export function Projects() {
             }}
             className="w-full md:!loop-true"
           >
-            <CarouselContent className="-ml-0 md:-ml-4">
+            <CarouselContent className="ml-0 md:-ml-4">
               {projects.map((project, index) => (
                 <CarouselItem key={project.id || index} className="basis-full md:basis-1/2 lg:basis-1/3 pl-0 md:pl-4">
                   <div className="p-4 md:p-1 h-full">

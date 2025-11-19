@@ -12,6 +12,23 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "compkit",
+    image: "",
+    title: "Compkit",
+    description:
+      "Compkit is an AI-powered platform for generating, sharing, and installing custom UI component libraries — no GitHub, no npm registry, no manual setup. Generate beautiful, themeable components with AI, publish them instantly, and let anyone install them with a single command.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Supabase",
+      "AI",
+    ],
+    demoLink: "#",
+    githubLink: "https://github.com/oskaripessinen/compkit",
+  },
+  {
     id: "espoo-business-advisor",
     image: "/assets/project5.png",
     title: "Espoo Business Advisor",

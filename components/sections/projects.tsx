@@ -92,7 +92,7 @@ export function Projects() {
                       <CardContent className="grow">
                         <div className="flex flex-wrap gap-2">
                           {project.technologies.map((tech) => (
-                            <Badge key={tech} variant="secondary" className="text-xs">
+                            <Badge key={tech} variant='secondary' className="border-border text-xs">
                               {tech}
                             </Badge>
                           ))}
@@ -102,7 +102,7 @@ export function Projects() {
                         {project.githubLink && (
                           <Button variant="outline" size="sm" className="flex-1" asChild>
                             <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                              <Github className="mr-2 h-4 w-4" />
+                              <Github className="size-4" />
                               Code
                             </Link>
                           </Button>
@@ -110,7 +110,7 @@ export function Projects() {
                         {project.demoLink && project.demoLink !== "#" && (
                           <Button size="sm" className="flex-1" asChild>
                             <Link href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="mr-2 h-4 w-4" />
+                              <ExternalLink className="size-4" />
                               Demo
                             </Link>
                           </Button>

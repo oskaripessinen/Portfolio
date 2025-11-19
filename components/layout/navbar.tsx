@@ -56,7 +56,7 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Button asChild variant="default" className="rounded-full" size="sm">
+            <Button asChild variant="default" className="rounded-full h-9 w-24" size="lg">
               <Link href="#contact">Contact</Link>
             </Button>
           </nav>

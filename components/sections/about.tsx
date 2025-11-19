@@ -52,7 +52,7 @@ export function About() {
           </h3>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 justify-items-center">
             {skills.map((skill) => (
-              <Card key={skill.name} className="bg-background/50 transition-colors hover:bg-accent/50 w-full max-w-[180px]">
+              <Card key={skill.name} className="bg-background/50 transition-colors hover:bg-accent/50 w-full max-w-[180px] border-2 border-border">
                 <CardContent className="flex text-foreground flex-col items-center justify-center p-6 text-center h-full gap-3">
                   <skill.icon color="currentColor" className="h-10 w-10" />
                   <span className="font-medium">{skill.name}</span>

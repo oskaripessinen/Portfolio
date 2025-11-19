@@ -23,7 +23,6 @@ export const projects: Project[] = [
       "Tailwind CSS",
       "Node.js",
       "Supabase",
-      "AI",
     ],
     demoLink: "#",
     githubLink: "https://github.com/oskaripessinen/compkit",

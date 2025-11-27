@@ -12,11 +12,29 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "structura",
+    image: "/assets/structura.png",
+    title: "Structura",
+    description:
+      "AI‑powered funding advisor that suggests grants, loans and equity‑like instruments based on a company’s stage, size and needs.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Prisma",
+      "PostgreSQL",
+      "Supabase Auth",
+    ],
+    demoLink: "https://cia.attractor.fi/",
+    achievement: "Top-5 overall in Since Ai Hackathon 2025",
+  },
+  {
     id: "compkit",
     image: "",
     title: "Compkit",
     description:
-      "Compkit is an AI-powered platform for generating, sharing, and installing custom UI component libraries — no GitHub, no npm registry, no manual setup. Generate beautiful, themeable components with AI, publish them instantly, and let anyone install them with a single command.",
+      "AI-powered platform to generate, publish and install custom UI component libraries instantly, with theming and zero manual setup.",
     technologies: [
       "React",
       "TypeScript",
@@ -32,7 +50,7 @@ export const projects: Project[] = [
     image: "/assets/project5.png",
     title: "Espoo Business Advisor",
     description:
-      "A minimal, multilingual web app to help people in Espoo prepare for a business advisory meeting. The app guides the user through a short Q&A, then generates a clear summary for an advisor.",
+      "Multilingual web app that guides users through a short Q&A and generates a clear summary for business advisory meetings.",
     technologies: [
       "Next.js",
       "TypeScript",
@@ -42,14 +60,14 @@ export const projects: Project[] = [
     ],
     demoLink: "https://test.attractor.fi/",
     githubLink: "",
-    achievement: "2nd place in Junction Espoo Challenge",
+    achievement: "2nd place in Junction 2025 Espoo Challenge",
   },
   {
     id: "shareflow",
     image: "/assets/project4.png",
     title: "Shareflow",
     description:
-      "Shared finance management app that allows users to track shared expenses, manage budgets, and collaborate with friends or family.",
+      "Shared finance app to track expenses, manage budgets, and collaborate with friends or family in pooled accounts.",
     technologies: [
       "React-Native",
       "Expo",
@@ -67,7 +85,7 @@ export const projects: Project[] = [
     image: "/assets/project3.png",
     title: "Notia",
     description:
-      "A real-time note-taking application with user authentication and real-time collaboration features.",
+      "Real-time note-taking app with authentication, collaborative editing and synchronization across devices for seamless workflows.",
     technologies: [
       "React",
       "Node.js",
@@ -86,7 +104,7 @@ export const projects: Project[] = [
     image: "/assets/project2.png",
     title: "Stock Tracker",
     description:
-      "A Mobile application for tracking stock prices and managing a stock portfolio. Built with React native and Yahoo finance Api for real time stock data.",
+      "Mobile app for tracking stock prices and managing a portfolio with real-time market data and alerts.",
     technologies: ["React Native", "Yahooo Finance API", "Expo"],
     demoLink: "#",
     githubLink: "https://github.com/oskaripessinen/stock-app",
@@ -96,7 +114,7 @@ export const projects: Project[] = [
     image: "/assets/project1.png",
     title: "Price Finder",
     description:
-      "A Mobile app for finding prices of products from different online stores. Built with React native, Flask and Ebay Api.",
+      "Mobile app that finds and compares product prices across online stores to help users spot the best deals.",
     technologies: ["React Native", "Python", "Flask", "ebay API"],
     demoLink: "#",
     githubLink: "https://github.com/oskaripessinen/price-finder",

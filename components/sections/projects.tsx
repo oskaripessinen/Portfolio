@@ -121,8 +121,8 @@ export function Projects() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
+            <CarouselPrevious className="cursor-pointer hidden md:flex" />
+            <CarouselNext className="cursor-pointer hidden md:flex" />
           </Carousel>
           
           {/* Mobile Dots Indicator */}

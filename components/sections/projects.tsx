@@ -61,7 +61,7 @@ export function Projects() {
         </motion.div>
       </Container>
 
-      <div className="w-full max-w-6xl mx-auto md:px-8">
+      <div className="w-full max-w-7xl mx-auto md:px-8">
         <div className="w-full max-w-full md:px-10">
           <Carousel
             setApi={setApi}
@@ -73,10 +73,10 @@ export function Projects() {
           >
             <CarouselContent className="ml-0 md:-ml-4">
               {projects.map((project, index) => (
-                <CarouselItem key={project.id || index} className="basis-full md:basis-1/2 lg:basis-1/3 pl-0 md:pl-4">
+                <CarouselItem key={project.id || index} className="basis-full min-h-80 min-w-90 md:basis-1/2 lg:basis-1/3 pl-0 md:pl-4">
                   <div className="p-4 md:p-1 h-full">
                     <Card className="h-full flex flex-col overflow-hidden border bg-card">
-                      <CardHeader>
+                      <CardHeader className="">
                         <CardTitle>
                           {project.title}
                           {project.achievement && (
@@ -89,7 +89,7 @@ export function Projects() {
                           {project.description}
                         </CardDescription>
                       </CardHeader>
-                      <CardContent className="grow">
+                      <CardContent className="grow justfy-between">
                         <div className="flex flex-wrap gap-2">
                           {project.technologies.map((tech) => (
                             <Badge key={tech} variant='secondary' className="border-border text-xs">

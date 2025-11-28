@@ -24,7 +24,6 @@ export const projects: Project[] = [
       "shadcn/ui",
       "Prisma",
       "PostgreSQL",
-      "Supabase Auth",
     ],
     demoLink: "https://cia.attractor.fi/",
     achievement: "Top-5 overall in Since Ai Hackathon 2025",
@@ -34,7 +33,7 @@ export const projects: Project[] = [
     image: "",
     title: "Compkit",
     description:
-      "AI-powered platform to generate, publish and install custom UI component libraries instantly, with theming and zero manual setup.",
+      "An AI-powered platform to generate, share, and install custom UI component libraries instantly. Just describe your component, publish, and install with a single command.",
     technologies: [
       "React",
       "TypeScript",
@@ -67,7 +66,7 @@ export const projects: Project[] = [
     image: "/assets/project4.png",
     title: "Shareflow",
     description:
-      "Shared finance app to track expenses, manage budgets, and collaborate with friends or family in pooled accounts.",
+      "React Native (Expo, TypeScript) app for shared and personal finances and investments, using Expo Router for navigation, Zustand for state, and NativeWind for styling.",
     technologies: [
       "React-Native",
       "Expo",
@@ -75,7 +74,6 @@ export const projects: Project[] = [
       "Express",
       "Supabase",
       "Google Auth",
-      "Google vision",
     ],
     demoLink: "#",
     githubLink: "https://github.com/oskaripessinen/Finance-Tracker",
@@ -85,7 +83,7 @@ export const projects: Project[] = [
     image: "/assets/project3.png",
     title: "Notia",
     description:
-      "Real-time note-taking app with authentication, collaborative editing and synchronization across devices for seamless workflows.",
+      "Notia is a React-based note-taking client featuring real-time collaboration over WebSockets. It offers sharing, OAuth sign-in, REST API integration, and Jest + RTL tests.",
     technologies: [
       "React",
       "Node.js",
@@ -94,7 +92,6 @@ export const projects: Project[] = [
       "Socket.io",
       "Jest",
       "RTL",
-      "GitHub Actions",
     ],
     demoLink: "",
     githubLink: "https://github.com/oskaripessinen/notia-client",

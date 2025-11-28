@@ -4,7 +4,14 @@ import * as React from "react";
 import { Container } from "@/components/layout/container";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -48,7 +55,7 @@ export function Projects() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
@@ -73,8 +80,14 @@ export function Projects() {
           >
             <CarouselContent className="ml-0 md:-ml-4">
               {projects.map((project, index) => (
-                <CarouselItem key={project.id || index} className="basis-full min-h-80 min-w-90 md:basis-1/2 lg:basis-1/3 pl-0 md:pl-4">
-                  <div className="p-4 md:p-1 h-full">
+                <CarouselItem key={project.id || index} className="basis-full md:basis-1/2 lg:basis-1/3 pl-0 md:pl-4">
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ amount: 0.6 }} // tarvitsee paljon näkyvyyttä
+                    transition={{ duration: 0.4 }}
+                    className="p-4 md:p-1 h-full"
+                  >
                     <Card className="h-full flex flex-col overflow-hidden border bg-card">
                       <CardHeader className="">
                         <CardTitle>
@@ -117,7 +130,7 @@ export function Projects() {
                         )}
                       </CardFooter>
                     </Card>
-                  </div>
+                  </motion.div>
                 </CarouselItem>
               ))}
             </CarouselContent>

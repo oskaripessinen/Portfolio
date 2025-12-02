@@ -13,7 +13,6 @@ export function Contact() {
       <div className="absolute inset-0 -z-10 h-full w-full overflow-hidden bg-background">
         <div className="absolute inset-0 bg-linear-to-b from-zinc-900 via-zinc-700 to-zinc-900 opacity-10 dark:opacity-5" />
       </div>
-
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

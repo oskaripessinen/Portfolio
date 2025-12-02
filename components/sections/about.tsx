@@ -35,7 +35,7 @@ export function About() {
               About Me
             </h2>
             <p className="text-lg text-muted-foreground">
-              I am a passionate full-stack developer with a strong foundation in both front-end and back-end development. Currently pursuing my bachelor&apos;s degree in Information and Communication Technology at the University of Turku (2023-2026), I combine academic knowledge with practical experience in building web and mobile applications.
+            I’m a full-stack developer with experience in both front-end and back-end development. I’m currently pursuing a bachelor’s degree in Information and Communication Technology at the University of Turku (2023–2026), and I apply what I learn to building practical web and mobile applications.
             </p>
           </div>
         </motion.div>

@@ -84,7 +84,7 @@ export function Projects() {
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ amount: 0.6 }} // tarvitsee paljon näkyvyyttä
+                    viewport={{ amount: 0.6 }}
                     transition={{ duration: 0.4 }}
                     className="p-4 md:p-1 h-full"
                   >

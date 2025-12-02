@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronRight, Github, Linkedin } from "lucide-react";
+import { ChevronRight, FileText, Github, Linkedin } from "lucide-react";
 
 export function Hero() {
   return (
@@ -40,7 +40,7 @@ export function Hero() {
           >
             <Button asChild size="lg" className="text-lg h-14 w-50 rounded-full">
               <Link href="/#projects">
-                View Projects <ChevronRight className="h-5 w-5" />
+                View Projects <ChevronRight strokeWidth={2.5} className="size-5 mt-0.5" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="text-lg h-14 w-50 md:w-40 rounded-full">
@@ -65,6 +65,12 @@ export function Hero() {
                 <Linkedin className="size-5" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
+            </Button>
+            <Button asChild variant="ghost" size="icon" className="h-14 w-14 rounded-full">
+              <a href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <FileText className="size-5" />
+                <span className="sr-only">Resume</span>
+              </a>
             </Button>
           </motion.div>
         </div>

@@ -3,15 +3,15 @@
 import { Container } from "@/components/layout/container";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Code2, Database, Layout, Server, Settings, Terminal } from "lucide-react";
+import { Code2, Database, Layout, Server, Smartphone, Globe, GitBranch, Cpu, Terminal } from "lucide-react";
 
 const skills = [
   { name: "TypeScript", icon: Code2 },
-  { name: "React", icon: Layout },
-  { name: "Next.js", icon: Terminal },
-  { name: "Tailwind CSS", icon: Settings },
+  { name: "Python", icon: Terminal },
+  { name: "Java", icon: Code2 },
   { name: "PostgreSQL", icon: Database },
-  { name: "Node.js", icon: Server },
+  { name: "AWS", icon: Server },
+  { name: "Docker", icon: Cpu },
 ];
 
 export function About() {

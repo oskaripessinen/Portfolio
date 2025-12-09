@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Container } from "@/components/layout/container";
+import { ContainerUI } from "@/components/layout/container";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -51,7 +51,7 @@ export function Projects() {
         <div className="absolute inset-0 bg-linear-to-b from-zinc-900 via-zinc-700 to-zinc-900 opacity-10 dark:opacity-5" />
       </div>
 
-      <Container>
+      <ContainerUI>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ export function Projects() {
             Here are some of my recent projects I&apos;ve worked on.
           </p>
         </motion.div>
-      </Container>
+      </ContainerUI>
 
       <div className="w-full max-w-7xl mx-auto md:px-8">
         <div className="w-full max-w-full md:px-10">

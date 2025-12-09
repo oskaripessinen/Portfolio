@@ -1,11 +1,11 @@
-import { Container } from "@/components/layout/container";
+import { ContainerUI } from "@/components/layout/container";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {
   return (
     <footer className="border-t bg-background py-12">
-      <Container>
+      <ContainerUI>
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <div className="flex flex-col items-center gap-2 md:items-start">
             <span className="text-lg font-bold">Oskari</span>
@@ -41,7 +41,7 @@ export function Footer() {
             </Link>
           </div>
         </div>
-      </Container>
+      </ContainerUI>
     </footer>
   );
 }

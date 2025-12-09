@@ -1,17 +1,17 @@
 "use client";
 
-import { Container } from "@/components/layout/container";
+import { ContainerUI } from "@/components/layout/container";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Code2, Database, Layout, Server, Smartphone, Globe, GitBranch, Cpu, Terminal } from "lucide-react";
+import { Code2, Database, Layout, Server, Smartphone, Globe, GitBranch, Cpu, Terminal, Container } from "lucide-react";
 
 const skills = [
   { name: "TypeScript", icon: Code2 },
-  { name: "Python", icon: Terminal },
+  { name: "Python", icon: Code2 },
   { name: "Java", icon: Code2 },
   { name: "PostgreSQL", icon: Database },
   { name: "AWS", icon: Server },
-  { name: "Docker", icon: Cpu },
+  { name: "Docker", icon: Container, iconClass: "text-white" },
 ];
 
 export function About() {
@@ -22,7 +22,7 @@ export function About() {
         <div className="absolute inset-0 bg-linear-to-b from-zinc-900 via-zinc-700 to-zinc-900 opacity-10 dark:opacity-5" />
       </div>
 
-      <Container>
+      <ContainerUI>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,14 +54,14 @@ export function About() {
             {skills.map((skill) => (
               <Card key={skill.name} className="bg-background/50 transition-colors hover:bg-accent/50 w-full max-w-[180px] border-2 border-border">
                 <CardContent className="flex text-foreground flex-col items-center justify-center p-6 text-center h-full gap-3">
-                  <skill.icon color="currentColor" className="h-10 w-10" />
+                  <skill.icon className={`h-10 w-10 ${skill.iconClass ?? 'text-foreground'}`} />
                   <span className="font-medium">{skill.name}</span>
                 </CardContent>
               </Card>
             ))}
           </div>
         </motion.div>
-      </Container>
+      </ContainerUI>
     </section>
   );
 }

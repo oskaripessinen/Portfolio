@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Container } from "@/components/layout/container";
+import { ContainerUI } from "@/components/layout/container";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ChevronRight, FileText, Github, Linkedin } from "lucide-react";
@@ -14,7 +14,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-linear-to-b from-zinc-900 via-zinc-700 to-zinc-900 opacity-10 dark:opacity-5" />
       </div>
 
-      <Container>
+      <ContainerUI>
         <div className="flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ export function Hero() {
             </Button>
           </motion.div>
         </div>
-      </Container>
+      </ContainerUI>
     </section>
   );
 }

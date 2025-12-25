@@ -1,18 +1,7 @@
 "use client";
 
 import { ContainerUI } from "@/components/layout/container";
-import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Code2, Database, Layout, Server, Smartphone, Globe, GitBranch, Cpu, Terminal, Container } from "lucide-react";
-
-const skills = [
-  { name: "TypeScript", icon: Code2 },
-  { name: "Python", icon: Code2 },
-  { name: "Java", icon: Code2 },
-  { name: "PostgreSQL", icon: Database },
-  { name: "AWS", icon: Server },
-  { name: "Docker", icon: Container, iconClass: "text-white" },
-];
 
 export function About() {
   return (
@@ -28,37 +17,44 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col items-center gap-12 md:flex-row md:items-start md:justify-between"
+          className="max-w-[800px] mx-auto space-y-12"
         >
-          <div className="flex-1 space-y-6 text-center md:text-left">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <div className="space-y-6">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-center">
               About Me
             </h2>
-            <p className="text-lg text-muted-foreground">
-            I’m a full-stack developer with experience in both front-end and back-end development. I’m currently pursuing a bachelor’s degree in Information and Communication Technology at the University of Turku (2023–2026), and I apply what I learn to building practical web and mobile applications.
+            <p className="text-lg text-muted-foreground text-left">
+              I’m a full-stack developer with experience in both front-end and back-end development. I’m currently pursuing a bachelor’s degree in Information and Communication Technology at the University of Turku (2023–2026).
             </p>
           </div>
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-16"
-        >
-          <h3 className="mb-8 text-2xl font-semibold text-center md:text-left">
-            Skills & Technologies
-          </h3>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 justify-items-center">
-            {skills.map((skill) => (
-              <Card key={skill.name} className="bg-background/50 transition-colors hover:bg-accent/50 w-full max-w-[180px] border-2 border-border">
-                <CardContent className="flex text-foreground flex-col items-center justify-center p-6 text-center h-full gap-3">
-                  <skill.icon className={`h-10 w-10 ${skill.iconClass ?? 'text-foreground'}`} />
-                  <span className="font-medium">{skill.name}</span>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-center md:text-left">Education & Certifications</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4 justify-start">
+                  <div>
+                    <h4 className="font-medium text-foreground">B.Sc. (Tech.) in Computer Science</h4>
+                    <p className="text-sm text-muted-foreground">University of Turku 2023 – 2026</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 justify-start">
+                  <div>
+                    <h4 className="font-medium text-foreground">Full Stack Open - Web Development Course</h4>
+                    <p className="text-sm text-muted-foreground">University of Helsinki 2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-center md:text-left">
+                Skills & Technologies
+              </h3>
+              <p className="text-base text-muted-foreground leading-relaxed text-left">
+                Mostly working with <span className="font-bold text-foreground">TypeScript</span>, <span className="font-bold text-foreground">Node.js</span>, and <span className="font-bold text-foreground">React</span>, with <span className="font-bold text-foreground">AWS</span>, <span className="font-bold text-foreground">PostgreSQL</span>, and <span className="font-bold text-foreground">Docker</span> for infrastructure and data. Also familiar with <span className="font-bold text-foreground">Java</span> and <span className="font-bold text-foreground">Python</span>.
+              </p>
+            </div>
           </div>
         </motion.div>
       </ContainerUI>

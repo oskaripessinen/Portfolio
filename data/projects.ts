@@ -1,5 +1,5 @@
 export interface Project {
-  id?: string; // Keeping id for React keys, optional as not in user data
+  id?: string;
   image: string;
   title: string;
   description: string;
@@ -7,10 +7,28 @@ export interface Project {
   demoLink?: string;
   githubLink?: string;
   Notice?: string;
-  achievement?: string; // New field for highlighting achievements
+  achievement?: string; 
 }
 
 export const projects: Project[] = [
+  {
+    id: "stox",
+    image: "",
+    title: "Stox",
+    description:
+      "Web-based market monitoring dashboard for stocks and indices with near real-time market data. Features a backend REST API with Redis caching, CI/CD pipeline using GitHub Actions, and deployment on AWS (ECS Fargate, ElastiCache, RDS) and Vercel.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "AWS",
+      "Docker",
+      "Redis",
+      "PostgreSQL",
+      "GitHub Actions",
+    ],
+    demoLink: "#",
+    githubLink: "https://github.com/oskaripessinen/stox",
+  },
   {
     id: "structura",
     image: "/assets/structura.png",

@@ -16,7 +16,7 @@ export const projects: Project[] = [
     image: "",
     title: "Stox",
     description:
-      "Web-based market monitoring dashboard for stocks and indices with near real-time market data. Features a backend REST API with Redis caching, CI/CD pipeline using GitHub Actions, and deployment on AWS (ECS Fargate, ElastiCache, RDS) and Vercel.",
+      "Real-time market monitoring dashboard for stocks and indices. Features a REST API with Redis caching, GitHub Actions CI/CD, and AWS/Vercel deployment.",
     technologies: [
       "React",
       "TypeScript",

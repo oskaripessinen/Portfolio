@@ -1,6 +1,7 @@
 "use client";
 
 import { ContainerUI } from "@/components/layout/container";
+import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
 export function About() {
@@ -28,33 +29,37 @@ export function About() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-center md:text-left">Education & Certifications</h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4 justify-start">
-                  <div>
-                    <h4 className="font-medium text-foreground">B.Sc. (Tech.) in Computer Science</h4>
-                    <p className="text-sm text-muted-foreground">University of Turku 2023 – 2026</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="bg-background/50 border-2 border-border">
+              <CardContent className="p-6 py-0 space-y-4">
+                <h3 className="text-xl font-semibold text-center md:text-left">Education & Certifications</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4 justify-start">
+                    <div>
+                      <h4 className="font-medium text-foreground">B.Sc. (Tech.) in Computer Science</h4>
+                      <p className="text-sm text-muted-foreground">University of Turku 2023 – 2026</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 justify-start">
+                    <div>
+                      <h4 className="font-medium text-foreground">Full Stack Open - Web Development Course</h4>
+                      <p className="text-sm text-muted-foreground">University of Helsinki 2024</p>
+                    </div>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 justify-start">
-                  <div>
-                    <h4 className="font-medium text-foreground">Full Stack Open - Web Development Course</h4>
-                    <p className="text-sm text-muted-foreground">University of Helsinki 2024</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
 
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-center md:text-left">
-                Skills & Technologies
-              </h3>
-              <p className="text-base text-muted-foreground leading-relaxed text-left">
-                Mostly working with <span className="font-bold text-foreground">TypeScript</span>, <span className="font-bold text-foreground">Node.js</span>, and <span className="font-bold text-foreground">React</span>, with <span className="font-bold text-foreground">AWS</span>, <span className="font-bold text-foreground">PostgreSQL</span>, and <span className="font-bold text-foreground">Docker</span> for infrastructure and data. Also familiar with <span className="font-bold text-foreground">Java</span> and <span className="font-bold text-foreground">Python</span>.
-              </p>
-            </div>
+            <Card className="bg-background/50 border-2 border-border">
+              <CardContent className="p-6 py-0 space-y-4">
+                <h3 className="text-xl font-semibold text-center md:text-left">
+                  Skills & Technologies
+                </h3>
+                <p className="text-base text-muted-foreground leading-relaxed text-left">
+                  Mostly working with <span className="font-bold text-foreground">TypeScript</span>, <span className="font-bold text-foreground">Node.js</span>, and <span className="font-bold text-foreground">React</span>, with <span className="font-bold text-foreground">AWS</span>, <span className="font-bold text-foreground">PostgreSQL</span>, and <span className="font-bold text-foreground">Docker</span> for infrastructure and data. Also familiar with <span className="font-bold text-foreground">Java</span> and <span className="font-bold text-foreground">Python</span>.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </motion.div>
       </ContainerUI>

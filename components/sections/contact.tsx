@@ -19,7 +19,7 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-xl"
+          className="mx-auto max-w-lg"
         >
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -33,12 +33,12 @@ export function Contact() {
           <div className="flex flex-col gap-6">
             <Link href="mailto:oskari.pessinen@gmail.com" className="group block">
               <Card className="bg-card hover:bg-accent/30 px-2 transition-colors border-2 border-border rounded-4xl">
-                <CardContent className="flex items-center justify-between px-4">
-                  <div className="flex items-center gap-4">
+                <CardContent className="flex items-center justify-between px-4 gap-4">
+                  <div className="flex items-center gap-4 flex-1 min-w-0">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors">
                       <Mail className="h-5 w-5" />
                     </div>
-                    <div className="text-left min-w-0">
+                    <div className="text-left min-w-0 flex-1">
                       <h3 className="font-semibold">Email</h3>
                       <p className="text-sm sm:text-lg text-muted-foreground transition-colors truncate">
                         oskari.pessinen@gmail.com
@@ -57,19 +57,19 @@ export function Contact() {
               className="group block"
             >
               <Card className="bg-card hover:bg-accent/30 transition-colors px-2 border-border rounded-4xl">
-                <CardContent className="flex items-center justify-between px-4">
-                  <div className="flex items-center gap-4">
+                <CardContent className="flex items-center justify-between px-4 gap-4">
+                  <div className="flex items-center gap-4 flex-1 min-w-0">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors">
                       <Linkedin className="h-5 w-5" />
                     </div>
-                    <div className="text-left">
+                    <div className="text-left min-w-0 flex-1">
                       <h3 className="font-semibold">LinkedIn</h3> 
-                      <p className="text-sm text-muted-foreground transition-colors">
+                      <p className="text-sm text-muted-foreground transition-colors truncate">
                         Oskari Pessinen
                       </p>
                     </div>
                   </div>
-                  <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="h-5 w-5 shrink-0 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                 </CardContent>
               </Card>
             </Link>

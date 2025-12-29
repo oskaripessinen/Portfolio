@@ -34,14 +34,13 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="#" className="flex items-center space-x-2">
-              <span className="text-xl font-bold tracking-tight">
+              <span className="text-xl font-heading font-bold tracking-tight">
                 Oskari Pessinen
               </span>
             </Link>
-            <ThemeToggle />
+              <ThemeToggle />
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link

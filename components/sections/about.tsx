@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 export function About() {
   return (
     <section id="about" className="relative min-h-screen flex items-center py-20 md:py-32">
-      {/* Background decoration */}
       <div className="absolute inset-0 -z-10 h-full w-full overflow-hidden bg-background">
         <div className="absolute inset-0 bg-linear-to-b from-zinc-900 via-zinc-700 to-zinc-900 opacity-10 dark:opacity-5" />
       </div>
@@ -21,7 +20,7 @@ export function About() {
           className="max-w-[800px] mx-auto space-y-12"
         >
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-center">
+            <h2 className="text-3xl font-bold font-heading tracking-tight sm:text-4xl text-center">
               About Me
             </h2>
             <p className="text-lg text-muted-foreground text-left">
@@ -36,13 +35,13 @@ export function About() {
                 <div className="space-y-4">
                   <div className="flex items-start gap-4 justify-start">
                     <div>
-                      <h4 className="font-medium text-foreground">B.Sc. (Tech.) in Computer Science</h4>
+                      <h4 className="font-medium text-foreground">Bachelor's in ICT</h4>
                       <p className="text-sm text-muted-foreground">University of Turku 2023 – 2026</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 justify-start">
                     <div>
-                      <h4 className="font-medium text-foreground">Full Stack Open - Web Development Course</h4>
+                      <h4 className="font-medium text-foreground">Full Stack Open - Web Dev Course</h4>
                       <p className="text-sm text-muted-foreground">University of Helsinki 2024</p>
                     </div>
                   </div>
@@ -56,7 +55,7 @@ export function About() {
                   Skills & Technologies
                 </h3>
                 <p className="text-base text-muted-foreground leading-relaxed text-left">
-                  Mostly working with <span className="font-bold text-foreground">TypeScript</span>, <span className="font-bold text-foreground">Node.js</span>, and <span className="font-bold text-foreground">React</span>, with <span className="font-bold text-foreground">AWS</span>, <span className="font-bold text-foreground">PostgreSQL</span>, and <span className="font-bold text-foreground">Docker</span> for infrastructure and data. Also familiar with <span className="font-bold text-foreground">Java</span> and <span className="font-bold text-foreground">Python</span>.
+                  Mostly working with <span className="font-medium text-foreground">TypeScript</span>, <span className="font-medium text-foreground">Node.js</span>, and <span className="font-medium text-foreground">React</span>, with <span className="font-medium text-foreground">AWS</span>, <span className="font-medium text-foreground">PostgreSQL</span>, and <span className="font-medium text-foreground">Docker</span> for infrastructure and data. Also familiar with <span className="font-medium text-foreground">Java</span> and <span className="font-medium text-foreground">Python</span>.
                 </p>
               </CardContent>
             </Card>

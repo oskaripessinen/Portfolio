@@ -9,7 +9,6 @@ import { Card, CardContent } from "@/components/ui/card";
 export function Contact() {
   return (
     <section id="contact" className="relative min-h-screen flex items-center py-20 md:py-32">
-      {/* Background decoration */}
       <div className="absolute inset-0 -z-10 h-full w-full overflow-hidden bg-background">
         <div className="absolute inset-0 bg-linear-to-b from-zinc-900 via-zinc-700 to-zinc-900 opacity-10 dark:opacity-5" />
       </div>
@@ -22,7 +21,7 @@ export function Contact() {
           className="mx-auto max-w-lg"
         >
           <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <h2 className="text-3xl font-bold font-heading tracking-tight sm:text-4xl">
               Contact Me
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">

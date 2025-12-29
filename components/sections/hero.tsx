@@ -21,15 +21,15 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-4xl lg:text-6xl">
+            <h1 className="text-3xl font-heading font-extrabold tracking-tight sm:text-4xl md:text-4xl lg:text-6xl">
               <span className="bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">
                 Oskari Pessinen
               </span>
-              <br />
-              <span className="bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">
-                Full-Stack Developer
-              </span>
+
             </h1>
+            <p className="mt-4 max-w-2xl text-lg text-muted-foreground sm:text-xl">
+              Full-Stack Developer &amp; Computer Science Student
+            </p>
           </motion.div>
 
           <motion.div

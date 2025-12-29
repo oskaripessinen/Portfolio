@@ -46,7 +46,6 @@ export function Projects() {
 
   return (
     <section id="projects" className="relative min-h-screen flex flex-col justify-center py-20 md:py-32">
-      {/* Background decoration */}
       <div className="absolute inset-0 -z-10 h-full w-full overflow-hidden bg-background">
         <div className="absolute inset-0 bg-linear-to-b from-zinc-900 via-zinc-700 to-zinc-900 opacity-10 dark:opacity-5" />
       </div>
@@ -59,7 +58,7 @@ export function Projects() {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+          <h2 className="text-3xl font-bold font-heading tracking-tight sm:text-4xl mb-4">
             Featured Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

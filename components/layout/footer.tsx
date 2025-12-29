@@ -8,7 +8,7 @@ export function Footer() {
       <ContainerUI>
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <div className="flex flex-col items-center gap-2 md:items-start">
-            <span className="text-lg font-bold">Oskari</span>
+            <span className="text-lg font-bold">Oskari Pessinen</span>
             <p className="text-sm text-muted-foreground text-center md:text-left">
               &copy; {new Date().getFullYear()} Oskari Pessinen. All rights reserved.
             </p>

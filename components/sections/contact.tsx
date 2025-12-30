@@ -22,7 +22,7 @@ export function Contact() {
         >
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold font-heading tracking-tight sm:text-4xl">
-              Contact Me
+              Contact
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Feel free to contact me via email or LinkedIn.

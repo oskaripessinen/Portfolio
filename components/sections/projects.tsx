@@ -59,7 +59,7 @@ export function Projects() {
           className="mb-12 text-center"
         >
           <h2 className="text-3xl font-bold font-heading tracking-tight sm:text-4xl mb-4">
-            Featured Projects
+            Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Here are some of my recent projects I&apos;ve worked on.

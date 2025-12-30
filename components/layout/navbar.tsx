@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
+import { motion } from "framer-motion";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -30,7 +31,12 @@ export function Navbar() {
 
 
   return (
-    <header className="sticky top-0 z-50 w-full px-4 md:px-10 border-b bg-background/80 backdrop-blur-md supports-backdrop-filter:bg-background/60">
+    <motion.header 
+      initial={{ y: -70, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="sticky top-0 z-50 w-full px-4 md:px-10 border-b bg-background/80 backdrop-blur-md supports-backdrop-filter:bg-background/60"
+    >
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="#" className="flex items-center space-x-2">
@@ -89,6 +95,6 @@ export function Navbar() {
             </DropdownMenu>
           </div>
         </div>
-    </header>
+    </motion.header>
   );
 }

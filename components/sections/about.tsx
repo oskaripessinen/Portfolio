@@ -24,7 +24,11 @@ export function About() {
               About Me
             </h2>
             <p className="text-lg text-muted-foreground text-left">
-              I’m a full-stack developer with experience in both front-end and back-end development. I’m currently pursuing a bachelor’s degree in Information and Communication Technology at the University of Turku (2023–2026).
+              I’m a full-stack developer with experience in both front-end and back-end development also interested in cloud computing and infrastructure.
+
+            </p>
+            <p className="text-lg text-muted-foreground text-left">
+              I’m currently pursuing a Bachelor’s degree in Information and Communication Technology at the University of Turku, set to graduate in the spring of 2026. Alongside my studies, I actively work on various personal projects.
             </p>
           </div>
 
@@ -35,7 +39,7 @@ export function About() {
                 <div className="space-y-4">
                   <div className="flex items-start gap-4 justify-start">
                     <div>
-                      <h4 className="font-medium text-foreground">Bachelor's in ICT</h4>
+                      <h4 className="font-medium text-foreground">Bachelor&apos;s in ICT</h4>
                       <p className="text-sm text-muted-foreground">University of Turku 2023 – 2026</p>
                     </div>
                   </div>

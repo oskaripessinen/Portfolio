@@ -13,12 +13,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import dynamic from "next/dynamic";
-
-const ThemeToggle = dynamic(
-  () => import("@/components/layout/theme-toggle").then((mod) => mod.ThemeToggle),
-  { ssr: false }
-);
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 const navLinks = [
   { name: "Home", href: "#" },
@@ -39,7 +34,7 @@ export function Navbar() {
     >
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <Link href="#" className="flex items-center space-x-2">
+            <Link href="#" className="items-center space-x-2 hidden md:flex">
               <span className="text-xl font-heading font-bold tracking-tight">
                 Oskari Pessinen
               </span>

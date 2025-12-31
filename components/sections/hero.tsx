@@ -51,7 +51,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-8 flex gap-4"
           >
             <Button asChild variant="ghost" size="icon" className="h-14 w-14 rounded-full">

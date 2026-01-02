@@ -17,23 +17,15 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Oskari - Full-Stack Developer",
-  description: "Portfolio of Oskari, a Full-Stack Developer specializing in Next.js, React, and Node.js.",
-  keywords: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Portfolio", "Full-Stack Developer"],
-  authors: [{ name: "Oskari" }],
-  creator: "Oskari",
+  title: "Oskari Pessinen - Full-Stack Developer",
+  authors: [{ name: "Oskari Pessinen" }],
+  creator: "Oskari Pessinen",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://example.com",
-    title: "Oskari - Full-Stack Developer",
-    description: "Portfolio of Oskari, a Full-Stack Developer specializing in Next.js, React, and Node.js.",
-    siteName: "Oskari Portfolio",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Oskari - Full-Stack Developer",
-    description: "Portfolio of Oskari, a Full-Stack Developer specializing in Next.js, React, and Node.js.",
+    url: "https://oskaripessinen.com",
+    title: "Oskari Pessinen - Full-Stack Developer",
+    siteName: "oskaripessinen.com",
   },
 };
 

@@ -1,4 +1,3 @@
-import { ContainerUI } from "@/components/layout/container";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 

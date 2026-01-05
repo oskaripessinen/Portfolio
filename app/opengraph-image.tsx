@@ -13,7 +13,7 @@ export default function Image() {
             tw="text-7xl font-black text-black tracking-tighter"
             style={{ fontFamily: 'sans-serif', fontWeight: '900' }}
           >
-            Oskari Pessinen
+            oskaripessinen.com
           </h1>
           
         </div>

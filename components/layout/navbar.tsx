@@ -8,11 +8,13 @@ import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { motion } from "framer-motion";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 const navLinks = [
@@ -64,30 +66,39 @@ export function Navbar() {
 
           {/* Mobile Navigation */}
           <div className="flex items-center gap-2 md:hidden">
-            <DropdownMenu modal={false}>
-              <DropdownMenuTrigger asChild>
+            <Sheet>
+              <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="min-w-[150px] bg-background/80 backdrop-blur-md supports-backdrop-filter:bg-background/60">
-                {navLinks.map((link) => (
-                  <React.Fragment key={link.href}>
-                    <DropdownMenuItem asChild className="py-3 text-center">
-                      <Link href={link.href} className="w-full cursor-pointer text-base">
-                      <span className="text-center w-full">{link.name}</span>
+              </SheetTrigger>
+              <SheetContent side="top" className="w-full h-[50vh] flex flex-col items-center justify-center bg-background/95 backdrop-blur-md">
+                <SheetHeader>
+                  <SheetTitle className="hidden">Mobile Menu</SheetTitle>
+                </SheetHeader>
+                <div className="flex flex-col items-center gap-6">
+                  {navLinks.map((link) => (
+                    <SheetClose key={link.href} asChild>
+                      <Link
+                        href={link.href}
+                        className="text-xl font-medium transition-colors hover:text-primary"
+                      >
+                        {link.name}
                       </Link>
-                    </DropdownMenuItem>
-                  </React.Fragment>
-                ))}
-                <DropdownMenuItem asChild className="py-3">
-                  <Link href="#contact" className="w-full cursor-pointer text-base text-center">
-                    <span className="text-center w-full">Contact</span>
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+                    </SheetClose>
+                  ))}
+                  <SheetClose asChild>
+                    <Link
+                      href="#contact"
+                      className="text-xl font-medium transition-colors hover:text-primary"
+                    >
+                      Contact
+                    </Link>
+                  </SheetClose>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
     </motion.header>

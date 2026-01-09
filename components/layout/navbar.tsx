@@ -18,7 +18,7 @@ import {
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 const navLinks = [
-  { name: "Home", href: "#" },
+  { name: "Home", href: "/" },
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
 ];
@@ -26,6 +26,22 @@ const navLinks = [
 export function Navbar() {
   const pathname = usePathname();
 
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+    e.preventDefault();
+    if (href === "/") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+      window.history.pushState(null, "", "/");
+    } else if (href.startsWith("#")) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        window.history.pushState(null, "", href);
+      }
+    }
+  };
 
   return (
     <motion.header 
@@ -36,7 +52,11 @@ export function Navbar() {
     >
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <Link href="#" className="flex items-center space-x-2">
+            <Link 
+              href="/" 
+              className="flex items-center space-x-2"
+              onClick={(e) => handleScroll(e, "/")}
+            >
               <span className="text-xl font-heading font-bold tracking-tight">
                 Oskari Pessinen
               </span>
@@ -49,12 +69,8 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
-                  pathname === link.href
-                    ? "text-foreground"
-                    : "text-muted-foreground"
-                )}
+                onClick={(e) => handleScroll(e, link.href)}
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
               >
                 {link.name}
               </Link>
@@ -82,6 +98,7 @@ export function Navbar() {
                     <SheetClose key={link.href} asChild>
                       <Link
                         href={link.href}
+                        onClick={(e) => handleScroll(e, link.href)}
                         className="text-xl font-medium transition-colors hover:text-primary"
                       >
                         {link.name}

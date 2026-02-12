@@ -7,18 +7,47 @@ import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
+
+  const toggleTheme = () => {
+    const nextTheme = resolvedTheme === "light" ? "dark" : "light"
+    const root = document.documentElement
+
+    root.classList.add("theme-transition")
+
+    const documentWithTransition = document as Document & {
+      startViewTransition?: (callback: () => void) => { finished: Promise<void> }
+    }
+
+    const transition = documentWithTransition.startViewTransition?.(() => {
+      setTheme(nextTheme)
+    })
+
+    if (!transition) {
+      setTheme(nextTheme)
+    }
+
+    const clearTransitionClass = () => {
+      root.classList.remove("theme-transition")
+    }
+
+    if (transition) {
+      transition.finished.finally(clearTransitionClass)
+    } else {
+      window.setTimeout(clearTransitionClass, 360)
+    }
+  }
 
   return (
     <Button
       variant="ghost"
-      size="icon-lg"
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      size="icon"
+      className="rounded-sm text-muted-foreground hover:text-foreground"
+      onClick={toggleTheme}
     >
-      <Sun className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+      <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
       <span className="sr-only">Toggle theme</span>
     </Button>
   )
 }
-

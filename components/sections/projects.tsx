@@ -2,11 +2,9 @@
 
 import * as React from "react";
 import { ContainerUI } from "@/components/layout/container";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
@@ -25,6 +23,33 @@ import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+
+const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+const highlightTechnologyTerms = (description: string, technologies: string[]) => {
+  if (technologies.length === 0) {
+    return description;
+  }
+
+  const sortedTechnologies = [...technologies].sort((a, b) => b.length - a.length);
+  const matcher = new RegExp(`(${sortedTechnologies.map(escapeRegExp).join("|")})`, "gi");
+
+  return description.split(matcher).map((part, index) => {
+    const isTechnology = sortedTechnologies.some(
+      (technology) => technology.toLowerCase() === part.toLowerCase()
+    );
+
+    if (!isTechnology) {
+      return <React.Fragment key={`${part}-${index}`}>{part}</React.Fragment>;
+    }
+
+    return (
+      <span key={`${part}-${index}`} className="font-semibold text-foreground">
+        {part}
+      </span>
+    );
+  });
+};
 
 export function Projects() {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -45,11 +70,7 @@ export function Projects() {
   }, [api]);
 
   return (
-    <section id="projects" className="relative min-h-screen flex flex-col justify-center py-20 md:py-32">
-      <div className="absolute inset-0 -z-10 h-full w-full overflow-hidden bg-background">
-        <div className="absolute inset-0 bg-linear-to-b from-zinc-900 via-zinc-700 to-zinc-900 opacity-10 dark:opacity-5" />
-      </div>
-
+    <section id="projects" className="section-surface relative min-h-screen flex flex-col justify-center py-20 md:py-32">
       <ContainerUI>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -58,16 +79,17 @@ export function Projects() {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <h2 className="text-3xl font-bold font-heading tracking-tight sm:text-4xl mb-4">
-            Projects
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Here are some of my recent projects I&apos;ve worked on.
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+            Selected Work
+          </p>
+          <h2 className="mb-4 text-3xl font-bold font-heading tracking-tight sm:text-4xl">Projects</h2>
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+            Products, experiments, and competition projects that focus on clarity, performance, and delivery.
           </p>
         </motion.div>
       </ContainerUI>
 
-      <div className="w-full max-w-7xl mx-auto md:px-8">
+      <div className="mx-auto w-full max-w-7xl md:px-8">
         <div className="w-full max-w-full md:px-10">
           <Carousel
             setApi={setApi}
@@ -75,76 +97,75 @@ export function Projects() {
               align: "center",
               loop: false,
             }}
-            className="w-full md:!loop-true"
+            className="w-full"
           >
             <CarouselContent className="ml-0 md:-ml-4">
-              {projects.map((project, index) => (
-                <CarouselItem key={project.id || index} className="basis-full md:basis-1/2 lg:basis-1/3 pl-0 md:pl-4">
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ amount: 0.2, once: true }}
-                    transition={{ duration: 0.4 }}
-                    className="p-4 md:p-1 h-full"
-                  >
-                    <Card className="h-full flex flex-col overflow-hidden border bg-card">
-                      <CardHeader className="">
-                        <CardTitle>
-                          {project.title}
-                          {project.achievement && (
-                            <span className="block text-xs font-medium text-primary/70 mt-2">
-                              {project.achievement}
-                            </span>
-                          )}
-                        </CardTitle>
-                        <CardDescription className="min-h-20">
-                          {project.description}
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent className="grow justfy-between">
-                        <div className="flex flex-wrap gap-2">
-                          {project.technologies.map((tech) => (
-                            <Badge key={tech} variant='secondary' className="border-border text-xs">
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                      </CardContent>
-                      <CardFooter className="flex gap-4 pt-4">
-                        {project.githubLink && (
-                          <Button variant="outline" size="sm" className="flex-1" asChild>
-                            <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                              <Github className="size-4" />
-                              Code
-                            </Link>
-                          </Button>
+              {projects.map((project, index) => {
+                const githubLink = project.githubLink ?? "";
+                const demoLink = project.demoLink ?? "";
+                const hasGithub = githubLink.length > 0;
+                const hasDemo = demoLink.length > 0 && demoLink !== "#";
+
+                return (
+                  <CarouselItem key={project.id || index} className="basis-full pl-0 md:basis-1/2 md:pl-4 lg:basis-1/3">
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ amount: 0.2, once: true }}
+                      transition={{ duration: 0.4 }}
+                      className="h-full p-4 md:p-1"
+                    >
+                      <Card className="glass-panel group h-full border-border/80 bg-card/60">
+                        <CardHeader className="gap-3">
+                          <CardTitle className="text-xl font-heading tracking-tight">
+                            {project.title}
+                            {project.achievement && (
+                              <span className="mt-2 block text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
+                                {project.achievement}
+                              </span>
+                            )}
+                          </CardTitle>
+                          <CardDescription className="min-h-36 text-sm leading-relaxed text-muted-foreground">
+                            {highlightTechnologyTerms(project.description, project.technologies)}
+                          </CardDescription>
+                        </CardHeader>
+                        {(hasGithub || hasDemo) && (
+                          <CardFooter className="mt-auto flex gap-3 pt-4">
+                            {hasGithub && (
+                              <Button variant="outline" size="sm" className="flex-1 rounded-sm" asChild>
+                                <Link href={githubLink} target="_blank" rel="noopener noreferrer">
+                                  <Github className="size-4" />
+                                  Code
+                                </Link>
+                              </Button>
+                            )}
+                            {hasDemo && (
+                              <Button size="sm" className="flex-1 rounded-sm" asChild>
+                                <Link href={demoLink} target="_blank" rel="noopener noreferrer">
+                                  <ExternalLink className="size-4" />
+                                  Demo
+                                </Link>
+                              </Button>
+                            )}
+                          </CardFooter>
                         )}
-                        {project.demoLink && project.demoLink !== "#" && (
-                          <Button size="sm" className="flex-1" asChild>
-                            <Link href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="size-4" />
-                              Demo
-                            </Link>
-                          </Button>
-                        )}
-                      </CardFooter>
-                    </Card>
-                  </motion.div>
-                </CarouselItem>
-              ))}
+                      </Card>
+                    </motion.div>
+                  </CarouselItem>
+                );
+              })}
             </CarouselContent>
-            <CarouselPrevious className="cursor-pointer hidden md:flex" />
-            <CarouselNext className="cursor-pointer hidden md:flex" />
+            <CarouselPrevious className="hidden cursor-pointer md:flex" />
+            <CarouselNext className="hidden cursor-pointer md:flex" />
           </Carousel>
-          
-          {/* Mobile Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-4 md:hidden">
+
+          <div className="mt-4 flex justify-center gap-2 md:hidden">
             {Array.from({ length: count }).map((_, index) => (
               <button
                 key={index}
                 className={cn(
-                  "h-2 w-2 rounded-full transition-all",
-                  current === index + 1 ? "bg-primary w-4" : "bg-muted-foreground/30"
+                  "h-2 w-2 rounded-sm transition-all",
+                  current === index + 1 ? "w-5 bg-foreground" : "bg-muted-foreground/40"
                 )}
                 onClick={() => api?.scrollTo(index)}
                 aria-label={`Go to slide ${index + 1}`}

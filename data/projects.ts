@@ -12,11 +12,31 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "espoo-business-advisor",
+    image: "",
+    title: "Espoo Business Advisor",
+    description:
+      "Model-assisted advisory tool for the City of Espoo that helps entrepreneurs prepare before advisor meetings through guided inputs and summary generation. Built with Next.js and TypeScript, deployed on Vercel, and integrated with recommendation flows for practical decision support.",
+    technologies: ["Next.js", "TypeScript", "Vercel"],
+    demoLink: "https://test.attractor.fi/",
+    achievement: "Junction 2025 Hackathon - 2nd Place (Espoo Challenge)",
+  },
+  {
+    id: "funding-advisor",
+    image: "",
+    title: "Funding Advisor",
+    description:
+      "Application that analyzes company profile data and suggests suitable funding instruments with tailored justifications. Implemented with Next.js and TypeScript, using the Qwen 3 80B model for structured recommendation generation and transparent reasoning output.",
+    technologies: ["Next.js", "TypeScript", "Qwen 3 80B"],
+    demoLink: "https://funding.attractor.fi/",
+    achievement: "Since AI Hackathon - Top 5 Overall",
+  },
+  {
     id: "stox",
     image: "",
     title: "Stox",
     description:
-      "Real-time market monitoring dashboard for stocks and indices. Features a REST API with Redis caching, GitHub Actions CI/CD, and AWS/Vercel deployment.",
+      "Web-based market monitoring dashboard for stocks and indices with near real-time updates and responsive UI views. Built with React and TypeScript, backed by a REST API with Redis caching, and delivered through Dockerized CI/CD pipelines on GitHub Actions with deployment across AWS and Vercel.",
     technologies: [
       "React",
       "TypeScript",
@@ -30,108 +50,29 @@ export const projects: Project[] = [
     githubLink: "https://github.com/oskaripessinen/stox",
   },
   {
-    id: "structura",
-    image: "/assets/structura.png",
-    title: "Structura",
-    description:
-      "AI‑powered funding advisor that suggests grants, loans and equity‑like instruments based on a company’s stage, size and needs.",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "Prisma",
-      "PostgreSQL",
-    ],
-    demoLink: "https://cia.attractor.fi/",
-    achievement: "Top-5 overall in Since Ai Hackathon 2025",
-  },
-  {
-    id: "compkit",
+    id: "cloud-native-task-system",
     image: "",
-    title: "Compkit",
+    title: "Cloud-Native Distributed Task Processing System",
     description:
-      "An AI-powered platform to generate, share, and install custom UI component libraries instantly. Just describe your component, publish, and install with a single command.",
+      "Production-oriented distributed task execution platform designed around cloud-native architecture and horizontal scalability. Implemented in Go with a stateless API layer, PostgreSQL as the source of truth, Redis-backed queueing, concurrent worker pools, and Docker-based service orchestration for reliable asynchronous processing.",
     technologies: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Node.js",
-      "Supabase",
-    ],
-    demoLink: "#",
-    githubLink: "https://github.com/oskaripessinen/compkit",
-  },
-  {
-    id: "espoo-business-advisor",
-    image: "/assets/project5.png",
-    title: "Espoo Business Advisor",
-    description:
-      "Multilingual web app that guides users through a short Q&A and generates a clear summary for business advisory meetings.",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Prisma",
+      "Go",
       "PostgreSQL",
-    ],
-    demoLink: "https://test.attractor.fi/",
-    githubLink: "",
-    achievement: "2nd place in Junction 2025 Espoo Challenge",
-  },
-  {
-    id: "shareflow",
-    image: "/assets/project4.png",
-    title: "Shareflow",
-    description:
-      "React Native (Expo, TypeScript) app for shared and personal finances and investments, using Expo Router for navigation, Zustand for state, and NativeWind for styling.",
-    technologies: [
-      "React-Native",
-      "Expo",
-      "Node.js",
-      "Express",
-      "Supabase",
-      "Google Auth",
+      "Redis",
+      "Docker",
+      "Cloud Native",
     ],
     demoLink: "#",
-    githubLink: "https://github.com/oskaripessinen/Finance-Tracker",
+    githubLink: "https://github.com/oskaripessinen/task-engine",
   },
   {
-    id: "notia",
-    image: "/assets/project3.png",
-    title: "Notia",
+    id: "navi",
+    image: "",
+    title: "Navi",
     description:
-      "Notia is a React-based note-taking client featuring real-time collaboration over WebSockets. It offers sharing, OAuth sign-in, REST API integration, and Jest + RTL tests.",
-    technologies: [
-      "React",
-      "Node.js",
-      "MongoDB",
-      "Google Auth",
-      "Socket.io",
-      "Jest",
-      "RTL",
-    ],
-    demoLink: "",
-    githubLink: "https://github.com/oskaripessinen/notia-client",
-  },
-  {
-    id: "stock-tracker",
-    image: "/assets/project2.png",
-    title: "Stock Tracker",
-    description:
-      "Mobile app for tracking stock prices and managing a portfolio with real-time market data and alerts.",
-    technologies: ["React Native", "Yahooo Finance API", "Expo"],
+      "Interactive command-line assistant for Linux environments with autocomplete and context-aware suggestions integrated directly into the Zsh prompt. Built in Python with a low-latency CLI architecture focused on fast response times, smooth shell integration, and practical day-to-day developer workflows.",
+    technologies: ["Python", "CLI", "Linux", "Zsh"],
     demoLink: "#",
-    githubLink: "https://github.com/oskaripessinen/stock-app",
-  },
-  {
-    id: "price-finder",
-    image: "/assets/project1.png",
-    title: "Price Finder",
-    description:
-      "Mobile app that finds and compares product prices across online stores to help users spot the best deals.",
-    technologies: ["React Native", "Python", "Flask", "ebay API"],
-    demoLink: "#",
-    githubLink: "https://github.com/oskaripessinen/price-finder",
+    githubLink: "https://github.com/oskaripessinen/navi",
   },
 ];

@@ -4,7 +4,6 @@ import * as React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
-import { motion } from "framer-motion";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 const navLinks = [
@@ -67,12 +66,7 @@ export function Navbar() {
   };
 
   return (
-    <motion.header
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="sticky top-4 z-50 w-full px-4 md:px-6"
-    >
+    <header className="sticky top-4 z-50 w-full px-4 md:px-6">
       <div
         ref={mobileMenuRef}
         className="glass-panel relative mx-auto flex h-16 max-w-6xl items-center justify-between rounded-lg px-4 md:px-6"
@@ -122,11 +116,8 @@ export function Navbar() {
           </Button>
 
           {mobileOpen && (
-            <motion.div
+            <div
               id="mobile-menu"
-              initial={{ opacity: 0, y: -6 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.18, ease: "easeOut" }}
               className="glass-panel absolute left-0 right-0 top-[calc(100%+0.5rem)] rounded-lg border border-border/90 bg-card/95 p-3 md:hidden"
             >
               <nav className="flex flex-col gap-1">
@@ -148,10 +139,10 @@ export function Navbar() {
                   Contact
                 </Link>
               </nav>
-            </motion.div>
+            </div>
           )}
         </div>
       </div>
-    </motion.header>
+    </header>
   );
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import { ContainerUI } from "@/components/layout/container";
-import { motion } from "framer-motion";
 import { Mail, Linkedin, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,13 +9,7 @@ export function Contact() {
   return (
     <section id="contact" className="section-surface relative min-h-screen flex items-center py-20 md:py-32">
       <ContainerUI>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mx-auto max-w-lg"
-        >
+        <div className="mx-auto max-w-lg">
           <div className="mb-12 text-center">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
               Let&apos;s Build
@@ -73,7 +66,7 @@ export function Contact() {
               </Card>
             </Link>
           </div>
-        </motion.div>
+        </div>
       </ContainerUI>
     </section>
   );

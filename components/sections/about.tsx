@@ -2,26 +2,19 @@
 
 import { ContainerUI } from "@/components/layout/container";
 import { Card, CardContent } from "@/components/ui/card";
-import { motion } from "framer-motion";
 
 export function About() {
   return (
     <section id="about" className="section-surface relative min-h-screen flex items-center py-20 md:py-32">
       <ContainerUI>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mx-auto max-w-5xl space-y-12"
-        >
+        <div className="mx-auto max-w-5xl space-y-12">
           <div className="space-y-6">
             <h2 className="text-center text-3xl font-bold font-heading tracking-tight sm:text-4xl">
               About
             </h2>
             <p className="text-left text-lg leading-relaxed text-muted-foreground">
               I am a software developer focused on full-stack engineering, reliability, and cloud-native delivery.
-              I currently work at Attractor Oy and contribute to technical planning in the Since AI hackathon team.
+              I focus on building production-ready systems with clear architecture and dependable execution.
             </p>
           </div>
 
@@ -97,7 +90,7 @@ export function About() {
               </Card>
             </div>
           </div>
-        </motion.div>
+        </div>
       </ContainerUI>
     </section>
   );

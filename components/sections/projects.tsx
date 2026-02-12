@@ -19,7 +19,6 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { projects } from "@/data/projects";
-import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -72,13 +71,7 @@ export function Projects() {
   return (
     <section id="projects" className="section-surface relative min-h-screen flex flex-col justify-center py-20 md:py-32">
       <ContainerUI>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
-          transition={{ duration: 0.5 }}
-          className="mb-12 text-center"
-        >
+        <div className="mb-12 text-center">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
             Selected Work
           </p>
@@ -86,7 +79,7 @@ export function Projects() {
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             Products, experiments, and competition projects that focus on clarity, performance, and delivery.
           </p>
-        </motion.div>
+        </div>
       </ContainerUI>
 
       <div className="mx-auto w-full max-w-7xl md:px-8">
@@ -108,13 +101,7 @@ export function Projects() {
 
                 return (
                   <CarouselItem key={project.id || index} className="basis-full pl-0 md:basis-1/2 md:pl-4 lg:basis-1/3">
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ amount: 0.2, once: true }}
-                      transition={{ duration: 0.4 }}
-                      className="h-full p-4 md:p-1"
-                    >
+                    <div className="h-full p-4 md:p-1">
                       <Card className="glass-panel group h-full border-border/80 bg-card/60">
                         <CardHeader className="gap-3">
                           <CardTitle className="text-xl font-heading tracking-tight">
@@ -150,7 +137,7 @@ export function Projects() {
                           </CardFooter>
                         )}
                       </Card>
-                    </motion.div>
+                    </div>
                   </CarouselItem>
                 );
               })}

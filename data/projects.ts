@@ -12,6 +12,25 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "vps-container-orchestrator",
+    image: "",
+    title: "VPS Container Orchestrator",
+    description:
+      "Centralized deployment hub for running multiple backend services on a single VPS with Docker Compose. It combines shared infrastructure (Nginx Proxy Manager, Watchtower, optional metrics API), per-app deployment templates, GitHub Actions + GHCR + SSH release flow, and optional Next.js control panel with Terraform bootstrap for AWS EC2.",
+    technologies: [
+      "Docker Compose",
+      "GitHub Actions",
+      "GHCR",
+      "Nginx Proxy Manager",
+      "Watchtower",
+      "Terraform",
+      "AWS",
+      "Next.js",
+    ],
+    demoLink: "#",
+    githubLink: "https://github.com/oskaripessinen/vps-container-orchestrator",
+  },
+  {
     id: "espoo-business-advisor",
     image: "",
     title: "Espoo Business Advisor",

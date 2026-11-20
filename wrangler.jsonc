@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "oskaripessinen",
+  "account_id": "212a3d7902ad3e0faacc9c4376e0431b",
+  "compatibility_date": "2026-11-20",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "oskaripessinen.com", "custom_domain": true },
+    { "pattern": "www.oskaripessinen.com", "custom_domain": true }
+  ],
+  "workers_dev": false
+}

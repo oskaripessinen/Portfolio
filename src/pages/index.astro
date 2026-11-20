@@ -1,0 +1,125 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { profile, experience, education, about, skills } from "../data/site";
+
+const isExternal = (href: string) => href.startsWith("http");
+---
+
+<Layout>
+  <header class="intro">
+    <h1>{profile.name}</h1>
+    <p class="muted">{profile.tagline}</p>
+    <ul class="links">
+      {
+        profile.links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              {...(isExternal(link.href) || link.href.endsWith(".pdf")
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </header>
+
+  <section aria-labelledby="about">
+    <h2 id="about">about</h2>
+    {about.map((p) => <p>{p}</p>)}
+    <dl class="skills">
+      {
+        skills.map((s) => (
+          <div>
+            <dt>{s.label}</dt>
+            <dd>{s.items}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </section>
+
+  <section aria-labelledby="experience">
+    <h2 id="experience">experience</h2>
+    <ol class="timeline">
+      {
+        experience.map((e) => (
+          <li>
+            <span class="period">{e.period}</span>
+            <div>
+              <p class="entry-title">
+                {e.title},{" "}
+                {e.orgUrl ? (
+                  <a href={e.orgUrl} target="_blank" rel="noopener noreferrer">
+                    {e.org}
+                  </a>
+                ) : (
+                  e.org
+                )}
+                {e.parent && (
+                  <>
+                    {" / "}
+                    {e.parent.url ? (
+                      <a href={e.parent.url} target="_blank" rel="noopener noreferrer">
+                        {e.parent.name}
+                      </a>
+                    ) : (
+                      e.parent.name
+                    )}
+                  </>
+                )}
+              </p>
+              {e.description && <p class="muted">{e.description}</p>}
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section aria-labelledby="education">
+    <h2 id="education">education</h2>
+    <ol class="timeline">
+      {
+        education.map((e) => (
+          <li>
+            <span class="period">{e.period}</span>
+            <div>
+              <p class="entry-title">{e.title}</p>
+              <p class="muted">
+                {e.orgUrl ? (
+                  <a href={e.orgUrl} target="_blank" rel="noopener noreferrer">
+                    {e.org}
+                  </a>
+                ) : (
+                  e.org
+                )}
+                {e.description && <> — {e.description}</>}
+              </p>
+              {e.thesis && (
+                <p class="muted">
+                  Thesis:{" "}
+                  {e.thesis.href && e.thesis.href !== "#" ? (
+                    <a href={e.thesis.href} target="_blank" rel="noopener noreferrer">
+                      {e.thesis.title} ↗
+                    </a>
+                  ) : (
+                    <em>{e.thesis.title}</em>
+                  )}
+                  {e.thesis.note && <span class="note"> ({e.thesis.note})</span>}
+                </p>
+              )}
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <footer>
+    <p class="muted">© {new Date().getFullYear()} Oskari Pessinen</p>
+  </footer>
+</Layout>

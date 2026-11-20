@@ -1,0 +1,139 @@
+% Resume — Oskari Pessinen
+% Build: tectonic -X compile --outdir resume resume/resume.tex   (or: xelatex resume.tex)
+% Output is copied to public/assets/resume.pdf
+%
+% The page is tuned to fill exactly one page. If you add or remove content,
+% adjust the spacing knobs below (\sectiongap, \entrygap, \itemgap, \skillgap).
+
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage{fontspec}
+\setmainfont{Noto Sans}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+
+\definecolor{linkblue}{RGB}{48,48,168}
+\hypersetup{colorlinks=true, urlcolor=linkblue, linkcolor=linkblue}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.75in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% ---- Spacing knobs ----
+\newcommand{\sectiongap}{11pt}  % extra space above each section title
+\newcommand{\entrygap}{6pt}    % space between entries inside a section
+\newcommand{\itemgap}{1pt}      % space between bullet points
+\newcommand{\skillgap}{5pt}     % space between skill rows
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{\sectiongap}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-2pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{\itemgap}}}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=\entrygap]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[topsep=4pt, itemsep=0pt, labelindent=0pt, leftmargin=*, labelsep=0.6em, rightmargin=0.08in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  {\LARGE Oskari Pessinen} \\ \vspace{3pt}
+  \small oskari.pessinen@gmail.com $|$ +358 447802010 \\ \vspace{1pt}
+  \href{https://www.linkedin.com/in/oskari-pessinen-6114582a6/}{linkedin}$|$
+  \href{https://github.com/oskaripessinen}{github}$|$
+  \href{https://oskaripessinen.com}{portfolio}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+  \begin{itemize}[leftmargin=0.15in, rightmargin=0.08in, label={}]
+    \item \small{Software developer working across frontend, backend and infrastructure, with a focus on software that is clear, maintainable and dependable in production. Currently pursuing an M.Sc. in Robotics and Autonomous Systems, bringing the same engineering mindset to systems that interact with the physical world.}
+  \end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Logentia Oy / Lemonsoft}{04/2026 -- Present}
+      {Software Developer}{Transport Analytics Software}
+      \resumeItemListStart
+        \resumeItem{Developing and maintaining Logentia's transport analytics software, which helps companies compare transport services, optimize costs and make more sustainable transport choices.}
+        \resumeItem{Working with Python, Rust, TypeScript and PostgreSQL on AWS, Docker and Linux.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Attractor Oy}{10/2025 -- 03/2026}
+      {Software Developer}{Technology Consultancy}
+      \resumeItemListStart
+        \resumeItem{Full-stack development with focus on technical execution and system reliability.}
+        \resumeItem{Delivered production-ready solutions using modern web and cloud technologies.}
+        \resumeItem{Implemented testing and validation practices in CI/CD workflows to ensure production quality.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {M.Sc. (Tech.) in Robotics and Autonomous Systems}{2026 -- Present}
+      {University of Turku}{Faculty of Technology}
+    \resumeSubheading
+      {B.Sc. (Tech.) in Information and Communication Technology}{2023 -- 2026}
+      {University of Turku}{Faculty of Technology}
+      \resumeItemListStart
+        \resumeItem{Bachelor's thesis: \href{https://www.utupub.fi/items/347912d6-c455-451e-a88e-903e8c5a5eaf}{\textit{Serverless-arkkitehtuurin cold start -ilmiö ja optimointimenetelmät}} (in Finnish) -- a literature review of the serverless cold start phenomenon and methods for reducing it.}
+        \resumeItem{Analyzed warm pools, snapshot techniques and predictive scaling based on IEEE Xplore and ACM Digital Library research from 2018--2025.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \item
+      \begin{tabularx}{0.97\textwidth}{@{}p{2.45in}X@{}}
+        \textbf{Programming Languages} & TypeScript, Python, Rust, Go, Java, SQL, C++ \\[\skillgap]
+        \textbf{Frameworks \& Libraries} & Next.js, Node.js, React.js \\[\skillgap]
+        \textbf{Infrastructure \& DevOps} & Docker, AWS, PostgreSQL, MongoDB, Redis \\[\skillgap]
+        \textbf{Testing \& Systems} & Linux, CI/CD, Automated Testing, IP Networking Basics \\
+      \end{tabularx}
+  \end{itemize}
+
+\end{document}
